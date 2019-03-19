@@ -1,0 +1,43 @@
+#!/bin/bash
+# This script generates source code for each stage (aka version)
+# the help of Feature Tool: https://bitbucket.org/ogstudio/feature-tool
+
+# Make sure we have at least Bash 3.
+if ((BASH_VERSINFO[0] < 3)); then
+    echo "ERROR You need to have Bash 3+"
+    exit 1
+fi
+
+DIR=`dirname $0`
+
+# Stages may be treated as versions.
+STAGES="
+01.Empty
+"
+
+# Directories with variants.
+VARIANTS=()
+
+for stage in $STAGES; do
+    echo "Generating '$stage' stage"
+
+    cfg=$DIR/$stage/Variants.txt
+    stageVariants=$DIR/$stage/variants
+    templates=$DIR/$stage/templates
+    # Collect variant directories each stage.
+    VARIANTS+=($stageVariants)
+
+    echo "> feature-tool --exclude-variant-ornament $cfg $templates ${VARIANTS[@]}"
+    feature-tool --exclude-variant-ornament $cfg $templates ${VARIANTS[@]}
+
+    # Execute stage specific `generate` script if it's present.
+    stageGenerate=$DIR/$stage/generate
+    if [ -f "$stageGenerate" ];
+    then
+        cwd=`pwd`
+        echo "Executing stage specific '$stageGenerate' script"
+        bash $stageGenerate "$DIR/$stage"
+        cd $cwd
+    fi
+done
+
