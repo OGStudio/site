@@ -1,1 +1,11 @@
-index.Base
+Base
+Menu
+Contents
+
+News
+Games
+Tools
+About
+
+Article
+

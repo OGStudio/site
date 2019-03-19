@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DIR_STAGE=$1
+
+if [ -z "$DIR_STAGE" ];
+then
+    echo "Usage: $0 DIR_STAGE"
+    exit 1
+fi
+
+DIR=`dirname $0`
+
+cp $DIR_STAGE/index.html $DIR
