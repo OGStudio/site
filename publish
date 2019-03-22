@@ -1,13 +1,14 @@
 #!/bin/bash
 
-DIR_STAGE=$1
+STAGE=$1
 
-if [ -z "$DIR_STAGE" ];
+if [ -z "$STAGE" ];
 then
-    echo "Usage: $0 DIR_STAGE"
+    echo "Usage: $0 STAGE"
     exit 1
 fi
 
 DIR=`dirname $0`
 
-cp $DIR_STAGE/index.html $DIR
+cp $DIR/stages/$STAGE/index.html $DIR
+cp $DIR/stages/$STAGE/games.html $DIR
