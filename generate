@@ -8,5 +8,5 @@ GEN=amleo.py
 
 # 01.Empty.
 $GEN $STG/01*/{Variants.txt,templates} $STG/01*/variants
-# 02.??.
-#$GEN $STG/02*/{Variants.txt,templates} $STG/{01,02}*/variants
+# 02.Excerpts.
+$GEN $STG/02*/{Variants.txt,templates} $STG/{01,02}*/variants

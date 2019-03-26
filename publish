@@ -10,5 +10,8 @@ fi
 
 DIR=`dirname $0`
 
-cp $DIR/stages/$STAGE/index.html $DIR
-cp $DIR/stages/$STAGE/games.html $DIR
+STG=$DIR/stages/$STAGE
+
+cp $STG/index.html $DIR
+cp $STG/games.html $DIR
+cp $STG/generate-news.py $DIR

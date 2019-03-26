@@ -1,0 +1,20 @@
+# pages
+Base
+Menu
+Contents
+
+News
+Games
+Tools
+About
+
+Article
+
+NewsItem
+NewsExcerpts
+
+# generate-news.py
+ListNews
+SortNewsDescending
+GenerateNewsExcerpts
+SaveExcerpts

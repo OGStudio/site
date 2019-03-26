@@ -1,0 +1,9 @@
+AMLEO Style
+.news_item
+{
+    background: #FFFFFF;
+    width: 800px;
+    padding: 10px;
+    border: 1px solid #E0E0E0;
+    text-align: left;
+}
