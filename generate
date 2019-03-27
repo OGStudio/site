@@ -10,3 +10,7 @@ GEN=amleo.py
 $GEN $STG/01*/{Variants.txt,templates} $STG/01*/variants
 # 02.Excerpts.
 $GEN $STG/02*/{Variants.txt,templates} $STG/{01,02}*/variants
+# 03.ExcerptStyle.
+$GEN $STG/03*/{Variants.txt,templates} $STG/{01,02,03}*/variants
+# 04.News.
+$GEN $STG/04*/{Variants.txt,templates} $STG/{01,02,03,04}*/variants

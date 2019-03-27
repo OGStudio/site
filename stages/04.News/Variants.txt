@@ -1,0 +1,33 @@
+# pages
+Base
+Menu
+Contents
+
+News
+CompleteNews
+Games
+Tools
+About
+
+Code
+Image
+SansSerif
+Links
+NewsItem
+NewsItemDate
+NewsItemContents
+
+# generate-news.py
+ListNews
+SortNewsDescending
+GenerateNewsExcerpts
+ExcerptsNewsEqualNumber
+ExcerptsContents
+ExcerptsTitles
+ExcerptsDates
+ExcerptsMore
+ExcerptsFrames
+CombineIndexExcerpts
+GenerateCompleteNews
+SaveCompleteNews
+FixNewsLinks

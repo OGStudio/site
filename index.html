@@ -7,6 +7,25 @@
             {
                 background: #FAFAFA;
             }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
             #header
             {
                 background: #2BA6E3;
@@ -19,38 +38,279 @@
                 text-decoration: none;
                 padding-left: 30px;
             }
-            #contents
+            a
             {
-                background: #FFFFFF;
-                width: 800px;
-                padding: 10px;
-                border: 1px solid #E0E0E0;
-                text-align: left;
+                color: #3A91CB;
+                text-decoration: none;
             }
             .news_item
             {
                 background: #FFFFFF;
-                width: 800px;
+                width: 720px;
                 padding: 10px;
+                margin-bottom: 30px;
                 border: 1px solid #E0E0E0;
                 text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
             }
         </style>
     </head>
     <body>
         <center>
-        <div id="header">
-            <a href="index.html">News</a>
-            <a href="games.html">Games</a>
-            <a href="tools.html">Tools</a>
-            <a href="about.html">About</a>
-        </div>
-        <h1>News</h1>
-        <script type="text/javascript">
-            html = (await (await fetch("news.html")).text());
-            document.write(html);
-        </script>
-        </center>
+            <div id="header">
+                <a href="index.html">News</a>
+                <a href="games.html">Games</a>
+                <a href="tools.html">Tools</a>
+                <a href="about.html">About</a>
+            </div>
+            <h1>News</h1>
+<div class="news_item">
+
+<h2 class="news_item_title">
+<a href="2018-11-19-ideal-gamedev.html">
+Ideal games and game development tools
+</a>
+</h2>
+
+<p class="news_item_date">
+2018-11-19 00:00
+</p>
+
+<div class="news_item_contents">
+<figure>
+<img src="images/2018-11-19-ideal-gamedev.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>In this article, we discuss how ideal video game and video game development</p>
+<p>tool look like, in our opinion.</p>
+<p><strong>Questions</strong></p>
+<p>As you know, the <a href="%7Bfilename%7D/pages/about.md">goals of Opensource Game Studio</a> are:</p>
+<ul>
+<li><p>creation of free video game development tools</p></li>
+<li><p>making video games with those tools</p></li>
+<li><p>preparing video game development tutorials</p></li>
+</ul>
+<p>This time we asked ourselves two simple questions: . . .</p>
+
+</div>
+
+<div class="news_item_more">
+<a href="2018-11-19-ideal-gamedev.html">
+More
+</a>
+</div>
+
+</div>
+<div class="news_item">
+
+<h2 class="news_item_title">
+<a href="2018-10-02-mahjong-demo2.html">
+OGS Mahjong 2: Demo 2
+</a>
+</h2>
+
+<p class="news_item_date">
+2018-10-02 00:00
+</p>
+
+<div class="news_item_contents">
+<figure>
+<img src="images/2018-10-02-mahjong-demo2.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>We are glad to announce the release of the second demonstration of OGS Mahjong 2.</p>
+<p>The purposes of this release were to refine our development techniques and</p>
+<p>build a solid cross-platform foundation.</p>
+<p><strong>Release</strong></p>
+<p>Run the latest version of OGS Mahjong 2 in your web browser:</p>
+<p><a href="http://ogstudio.github.io/ogs-mahjong">http://ogstudio.github.io/ogs-mahjong</a></p>
+<p>You are encouraged to run the game with <code>seed</code> parameter like this: . . .</p>
+
+</div>
+
+<div class="news_item_more">
+<a href="2018-10-02-mahjong-demo2.html">
+More
+</a>
+</div>
+
+</div>
+<div class="news_item">
+
+<h2 class="news_item_title">
+<a href="2018-08-21-examples-and-dependencies.html">
+Examples and dependencies
+</a>
+</h2>
+
+<p class="news_item_date">
+2018-08-21 00:00
+</p>
+
+<div class="news_item_contents">
+<figure>
+<img src="images/2018-08-21-examples-and-dependencies.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>This article describes two new OpenSceneGraph cross-platform examples and the</p>
+<p>change in handling dependencies.</p>
+<p><strong>Examples of HTTP client and node selection</strong></p>
+<p>Once we finished working on <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/04.RemoteDebugging">the remote debugging example</a> and</p>
+<p><a href="2018-06-27-example-driven-development.html">reported its completion</a>, we were surprised by the fact</p>
+<p>that secure HTTP connection between a debugged application and debug broker . . .</p>
+
+</div>
+
+<div class="news_item_more">
+<a href="2018-08-21-examples-and-dependencies.html">
+More
+</a>
+</div>
+
+</div>
+<div class="news_item">
+
+<h2 class="news_item_title">
+<a href="2018-06-27-example-driven-development.html">
+Example-driven development
+</a>
+</h2>
+
+<p class="news_item_date">
+2018-06-27 00:00
+</p>
+
+<div class="news_item_contents">
+<figure>
+<img src="images/2018-06-27-example-driven-development.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>This article explains how the third OpenSceneGraph cross-platform example</p>
+<p>opened our eyes to example-driven development.</p>
+<p><strong>2018-08 EDIT</strong>: the third example has been renamed to the fourth one due to</p>
+<p>the reasons described in the <a href="2018-08-21-examples-and-dependencies.html">next article</a>.</p>
+<p><strong>The third OpenSceneGraph cross-platform example</strong></p>
+<p>The third OpenSceneGraph cross-platform example explains how to implement . . .</p>
+
+</div>
+
+<div class="news_item_more">
+<a href="2018-06-27-example-driven-development.html">
+More
+</a>
+</div>
+
+</div>
+<div class="news_item">
+
+<h2 class="news_item_title">
+<a href="2018-04-20-openscenegraph-examples.html">
+OpenSceneGraph cross-platform examples
+</a>
+</h2>
+
+<p class="news_item_date">
+2018-04-20 00:00
+</p>
+
+<div class="news_item_contents">
+<figure>
+<img src="images/2018-04-20-openscenegraph-examples.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>This article summarizes the work we did to produce the first two</p>
+<p>cross-platform OpenSceneGraph examples.</p>
+<p>By the time <a href="2018-02-16-mahjong-techdemo1-gameplay.html">the first technology demonstration of OGS Mahjong 2</a></p>
+<p>has been released, we’ve already had <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues/4">issue request</a></p>
+<p>(to explain how to load images with OpenSceneGraph on Android) hanging for some</p>
+<p>time. We considered creating a new tutorial for . . .</p>
+
+</div>
+
+<div class="news_item_more">
+<a href="2018-04-20-openscenegraph-examples.html">
+More
+</a>
+</div>
+
+</div>
+<div class="news_item">
+
+<h2 class="news_item_title">
+<a href="2018-02-16-mahjong-techdemo1-gameplay.html">
+First techdemo of OGS Mahjong 2: Gameplay
+</a>
+</h2>
+
+<p class="news_item_date">
+2018-02-16 00:00
+</p>
+
+<div class="news_item_contents">
+<figure>
+<img src="images/2018-02-16-mahjong-techdemo1-gameplay.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>We are glad to announce the release of the first technical demonstration of</p>
+<p>OGS Mahjong 2. The purpose of this release was to verify gameplay across</p>
+<p>supported platforms.</p>
+<p>Get techdemo for your platform:</p>
+<ul>
+<li><p>Run <a href="https://ogstudio.github.io/game-mahjong/versions/013/mjin-player.html">Web version</a> in your browser</p></li>
+<li><p>Get <a href="https://drive.google.com/open?id=1KW8IEN8Dpz8ODeg8BctVSJyzj9-AL9hR">Android version</a></p></li>
+<li><p>Get <a href="https://drive.google.com/open?id=1oj0-OXSmEatttzn86u2vgP9SRAIC0ozB">Windows version</a></p></li>
+<li><p>Get <a href="https://drive.google.com/open?id=1EX7kLIThLiMz9_W7VmBPySms3mlrF-i6">Linux version</a> . . .</p></li>
+</ul>
+
+</div>
+
+<div class="news_item_more">
+<a href="2018-02-16-mahjong-techdemo1-gameplay.html">
+More
+</a>
+</div>
+
+</div>
+<div class="news_item">
+
+<h2 class="news_item_title">
+<a href="2018-01-26-mahjong-recreation-start.html">
+Mahjong recreation start
+</a>
+</h2>
+
+<p class="news_item_date">
+2018-01-26 00:00
+</p>
+
+<div class="news_item_contents">
+<figure>
+<img src="images/2018-01-26-mahjong-recreation-start.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>This article describes the start of Mahjong game recreation.</p>
+<p><strong>Plan</strong></p>
+<p>We started Mahjong recreation endeavour by composing a brief plan to get gameplay with minimal graphics:</p>
+<ul>
+<li><p>Load single layout</p></li>
+<li><p>Place tiles in layout positions</p></li>
+<li><p>Distinguish tiles</p></li>
+<li><p>Implement selection</p></li>
+<li><p>Implement matching</p></li>
+</ul>
+<p>Just like any other plan, this one looked fine at first sight. However, once you get down to work, new details start to come out. This plan was no exception. Below are a few problems that came out during development. . . .</p>
+
+</div>
+
+<div class="news_item_more">
+<a href="2018-01-26-mahjong-recreation-start.html">
+More
+</a>
+</div>
+
+</div>        </center>
         <script type="text/javascript">
         </script>
     </body>

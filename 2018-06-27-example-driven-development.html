@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 10px;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding-left: 30px;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            #contents
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 10px;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <div id="header">
+                <a href="index.html">News</a>
+                <a href="games.html">Games</a>
+                <a href="tools.html">Tools</a>
+                <a href="about.html">About</a>
+            </div>
+            <h1>In the news</h1>
+            <div id="contents">
+
+<h2 class="news_item_title">
+<a href="2018-06-27-example-driven-development.html">
+Example-driven development
+</a>
+</h2>
+
+<p class="news_item_date">
+2018-06-27 00:00
+</p>
+
+<div class="news_item_contents">
+<p><img src="images/2018-06-27-example-driven-development.png" alt="Screenshot" /></p>
+
+<p>This article explains how the third OpenSceneGraph cross-platform example</p>
+
+<p>opened our eyes to example-driven development.</p>
+
+<p><strong>2018-08 EDIT</strong>: the third example has been renamed to the fourth one due to</p>
+
+<p>the reasons described in the <a href="2018-08-21-examples-and-dependencies.html">next article</a>.</p>
+
+<p><strong>The third OpenSceneGraph cross-platform example</strong></p>
+
+<p>The third OpenSceneGraph cross-platform example explains how to implement</p>
+
+<p><a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/04.RemoteDebugging">remote debugging across platforms</a>. This example is less about</p>
+
+<p>OpenSceneGraph and more about different platforms.</p>
+
+<p>Remote anything nowadays assumes the use of HTTP(s) over TCP/IP. Thus, the</p>
+
+<p>first idea was to embed HTTP server into an application and let HTTP clients</p>
+
+<p>interact with the server. However, serving HTTP across all platforms is</p>
+
+<p>complicated:</p>
+
+<ul>
+<li><p>desktops have firewalls</p></li>
+<li><p>mobiles have restrictions on background processes</p></li>
+<li><p>web browsers are HTTP clients by design</p></li>
+</ul>
+
+<p>That's why we decided to create a mediator between debugged application and UI.</p>
+
+<p><a href="https://github.com/OGStudio/debug-broker">Debug broker</a>, a small Node.js application, became that mediator.</p>
+
+<p>Debug broker uses no external dependencies, so it's easy to run virtually</p>
+
+<p>anywhere. Also, since debug broker is a server application, you can configure</p>
+
+<p>it once and use it for any number of applications.</p>
+
+<p>Both <a href="https://github.com/OGStudio/debug-ui">debug UI</a> and <a href="https://github.com/OGStudio/debug-broker">debug broker</a> use JavaScript</p>
+
+<p>because we wanted these tools to be accessible from anywhere with no prior</p>
+
+<p>installation. This decision limited us to web browser solution. Providing</p>
+
+<p>any sort of desktop application would incur additional installation and</p>
+
+<p>maintenance effort, which would only complicate the tools.</p>
+
+<p><strong>Example-driven development establishment</strong></p>
+
+<p>Once the third example was implemented, we realized how important and</p>
+
+<p>beneficial it is to develop new features outside the main project:</p>
+
+<ul>
+<li><p>the main project is freed from excessive commit noise</p></li>
+<li><p>a new feature is publicly shared for everyone to learn, criticize, and improve</p></li>
+</ul>
+
+<p>When we publicly share our knowledge:</p>
+
+<ul>
+<li><p>we must create documentation for everyone (including ourselves later) to understand what's going on</p></li>
+<li><p>we must not use hacks because that would break your trust in us</p></li>
+</ul>
+
+<p>From now on, all new features like input handling, Mahjong layout loading,</p>
+
+<p>resource caching, etc. are going to be first implemented as examples.</p>
+
+<p>We call this example-driven development.</p>
+
+<p>That's it for explaining how the third OpenSceneGraph cross-platform example</p>
+
+<p>opened our eyes to example-driven development.</p>
+
+</div>
+            </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

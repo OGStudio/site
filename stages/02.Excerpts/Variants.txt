@@ -11,7 +11,6 @@ About
 Article
 
 NewsItem
-NewsExcerpts
 
 # generate-news.py
 ListNews

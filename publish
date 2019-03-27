@@ -12,6 +12,5 @@ DIR=`dirname $0`
 
 STG=$DIR/stages/$STAGE
 
-cp $STG/index.html $DIR
-cp $STG/games.html $DIR
-cp $STG/generate-news.py $DIR
+cp $STG/*.html $DIR
+cp $STG/*.py $DIR

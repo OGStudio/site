@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 10px;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding-left: 30px;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            #contents
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 10px;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <div id="header">
+                <a href="index.html">News</a>
+                <a href="games.html">Games</a>
+                <a href="tools.html">Tools</a>
+                <a href="about.html">About</a>
+            </div>
+            <h1>In the news</h1>
+            <div id="contents">
+
+<h2 class="news_item_title">
+<a href="2018-08-21-examples-and-dependencies.html">
+Examples and dependencies
+</a>
+</h2>
+
+<p class="news_item_date">
+2018-08-21 00:00
+</p>
+
+<div class="news_item_contents">
+<p><img src="images/2018-08-21-examples-and-dependencies.png" alt="Screenshot" /></p>
+
+<p>This article describes two new OpenSceneGraph cross-platform examples and the</p>
+
+<p>change in handling dependencies.</p>
+
+<p><strong>Examples of HTTP client and node selection</strong></p>
+
+<p>Once we finished working on <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/04.RemoteDebugging">the remote debugging example</a> and</p>
+
+<p><a href="2018-06-27-example-driven-development.html">reported its completion</a>, we were surprised by the fact</p>
+
+<p>that secure HTTP connection between a debugged application and debug broker</p>
+
+<p>was only working in the web version of the example. Desktop and mobile versions</p>
+
+<p>only worked with insecure HTTP.</p>
+
+<p>Since current debug scheme has no authentication, insecure debugging over HTTP</p>
+
+<p>doesn't really hurt. However, if we want to access resources located at popular</p>
+
+<p>sites like GitHub and BitBucket, we have to support secure HTTP.</p>
+
+<p>The need to support HTTPS on each platform spurred us to create</p>
+
+<p><a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/03.HTTPClient">HTTP client example</a>. Turned out, each platform had its own</p>
+
+<p>preferred way of doing secure HTTP:</p>
+
+<ul>
+<li><p>web (Emscripten) provides Fetch API</p></li>
+<li><p>desktop is fine with Mongoose and OpenSSL</p></li>
+<li><p>Android provides HttpUrlConnection in Java</p></li>
+<li><p>iOS provides NSURLSession in Objective-C</p></li>
+</ul>
+
+<p>The need to support different languages on different platforms resulted</p>
+
+<p>in the creation of so-called 'host-guest' pattern:</p>
+
+<ul>
+<li><p>guest (platform agnostic)</p>
+
+<ul>
+<li><p>provides networking representation</p></li>
+<li><p>used by cross-platform C++ code</p></li>
+</ul></li>
+<li><p>host (specific platform)</p>
+
+<ul>
+<li><p>polls guest for pending requests</p></li>
+<li><p>processes them</p></li>
+<li><p>reports results back to the guest</p></li>
+</ul></li>
+</ul>
+
+<p><a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/05.NodeSelection">Node selection example</a> was straightforward and caused no troubles.</p>
+
+<p><strong>The change in handling dependencies</strong></p>
+
+<p>For over a year we had to deal with the following</p>
+
+<p><a href="http://forum.openscenegraph.org/viewtopic.php?t=17443">shortcomings</a> when building OpenSceneGraph across platforms</p>
+
+<p>using conventional methods:</p>
+
+<ul>
+<li><p>macOS builds failing due to certain compile flags we use</p></li>
+<li><p>hacking PNG plugin safety guards to have PNG support under Android</p></li>
+<li><p>iOS simulator and device builds of the same example being in separate Xcode projects</p></li>
+<li><p>OpenSceneGraph taking 20-30 minutes to build</p></li>
+</ul>
+
+<p>These shortcomings were slowing us down and complicating the development of</p>
+
+<p>new examples. Upon hitting these problems ten more times this month we decided</p>
+
+<p>it was time to solve them once and for all. Now OpenSceneGraph is built as part</p>
+
+<p>of each example in 2-3 minutes, and there's no more dependency magic involved.</p>
+
+<p>We took the same approach of building dependencies as part of each example to</p>
+
+<p>other external libraries like Mongoose and libpng-android, too.</p>
+
+<p>With these obstacles out of the way, we can now iterate faster. Just in time</p>
+
+<p>for the next technical demonstration of Mahjong 2!</p>
+
+<p>That's it for describing two new OpenSceneGraph cross-platform examples and</p>
+
+<p>the change in handling dependencies.</p>
+
+</div>
+            </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 10px;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding-left: 30px;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            #contents
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 10px;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <div id="header">
+                <a href="index.html">News</a>
+                <a href="games.html">Games</a>
+                <a href="tools.html">Tools</a>
+                <a href="about.html">About</a>
+            </div>
+            <h1>In the news</h1>
+            <div id="contents">
+
+<h2 class="news_item_title">
+<a href="2018-01-26-mahjong-recreation-start.html">
+Mahjong recreation start
+</a>
+</h2>
+
+<p class="news_item_date">
+2018-01-26 00:00
+</p>
+
+<div class="news_item_contents">
+<p><img src="images/2018-01-26-mahjong-recreation-start.png" alt="Screenshot" /></p>
+
+<p>This article describes the start of Mahjong game recreation.</p>
+
+<p><strong>Plan</strong></p>
+
+<p>We started Mahjong recreation endeavour by composing a brief plan to get gameplay with minimal graphics:</p>
+
+<ul>
+<li><p>Load single layout</p></li>
+<li><p>Place tiles in layout positions</p></li>
+<li><p>Distinguish tiles</p></li>
+<li><p>Implement selection</p></li>
+<li><p>Implement matching</p></li>
+</ul>
+
+<p>Just like any other plan, this one looked fine at first sight. However, once you get down to work, new details start to come out. This plan was no exception. Below are a few problems that came out during development.</p>
+
+<p><strong>Problem №1: provide binary resources across supported platforms</strong></p>
+
+<p>Mahjong is going to be available on desktop, mobile, and web. Each of these platforms has its constraints on accessing external files:</p>
+
+<ul>
+<li><p>Desktop can access almost any file</p></li>
+<li><p>Android/iOS have limited access to file system</p></li>
+<li><p>Web does not have any file system at all</p></li>
+</ul>
+
+<p>To provide a unified way for accessing resources, we decided to include them into final executable. This decision led to the birth of <strong>mjin-resource</strong> and <strong>mahjong-data</strong> projects.</p>
+
+<p><a href="https://bitbucket.org/ogstudio/mjin-resource">mjin-resource</a>:</p>
+
+<ul>
+<li><p>converts binary files to C header files with the help of <strong>xxd</strong> utility</p></li>
+<li><p>generates MJIN project that contains generated headers to be compiled into static library</p></li>
+<li><p>provides C++ interface for accessing generated resources</p></li>
+</ul>
+
+<p><a href="https://bitbucket.org/ogstudio-games/mahjong-data">mahjong-data</a> is an example of such generated MJIN project that is referenced by <a href="https://bitbucket.org/ogstudio-games/mahjong">mahjong</a> project.</p>
+
+<p><strong>Problem №2: load PNG images across supported platforms</strong></p>
+
+<p>To load PNG, we use corresponding OpenSceneGraph plugin. We built it for desktop with no issues. Building for web (Emscripten) turned out to be more difficult: Emscripten provides its own version of <strong>libpng</strong>, which OpenSceneGraph build script can't detect. We had to work around several OpenSceneGraph checks to successfully build the plugin for Emscripten.</p>
+
+<p>Building the plugin for Android and iOS is still waiting for us. Once we get PNG plugin working across supported platforms, we are going to publish a new tutorial for <a href="https://github.com/ogstudio/openscenegraph-cross-platform-guide">OpenSceneGraph cross-platform guide</a> to cover PNG image loading. We already got a <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues/4">request to describe image loading</a>.</p>
+
+<p><strong>Development</strong></p>
+
+<p><a href="2017-03-16_lets-go.html">As you know</a>, we published OpenSceneGraph cross-platform guide to make OpenSceneGraph community stronger. We value education, and we love to share our knowledge. That's why we decided to develop Mahjong in small reproducible chunks uniquely identified by internal versions. These versions are available in <a href="https://bitbucket.org/ogstudio-games/mahjong">mahjong repository</a>.</p>
+
+<p>We also provide <a href="http://ogstudio.github.io/game-mahjong">version history and web releases of each internal version</a> for the following reasons:</p>
+
+<ul>
+<li><p>education: show how development looks like internally</p></li>
+<li><p>accessibility: provide older versions for comparison</p></li>
+</ul>
+
+<p><strong>Current Mahjong game status</strong></p>
+
+<p>As of the time of this writing, we have implemented tile selection. <a href="https://ogstudio.github.io/game-mahjong/versions/010/mjin-player.html">Try it in your browser!</a></p>
+
+<p>Once we finish tile matching implementation, we are going to publish the intermediate result for all supported platforms.</p>
+
+<p>That's it for describing the start of Mahjong game recreation.</p>
+
+</div>
+            </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>
