@@ -43,11 +43,13 @@
                 color: #3A91CB;
                 text-decoration: none;
             }
-            #contents
+            .news_item
             {
                 background: #FFFFFF;
                 width: 720px;
                 padding: 10px;
+                margin-top: 30px;
+                margin-bottom: 30px;
                 border: 1px solid #E0E0E0;
                 text-align: left;
             }
@@ -65,78 +67,48 @@
     </head>
     <body>
         <center>
-            <div id="header">
-                <a href="index.html">News</a>
-                <a href="games.html">Games</a>
-                <a href="tools.html">Tools</a>
-                <a href="about.html">About</a>
-            </div>
-            <h1>In the news</h1>
-            <div id="contents">
-
-<h2 class="news_item_title">
-<a href="2018-10-02-mahjong-demo2.html">
-OGS Mahjong 2: Demo 2
-</a>
-</h2>
-
-<p class="news_item_date">
-2018-10-02 00:00
-</p>
-
-<div class="news_item_contents">
-<p><img src="images/2018-10-02-mahjong-demo2.png" alt="Screenshot" /></p>
-
-<p>We are glad to announce the release of the second demonstration of OGS Mahjong 2.</p>
-
-<p>The purposes of this release were to refine our development techniques and</p>
-
-<p>build a solid cross-platform foundation.</p>
-
+        <div id="header">
+            <a href="index.html">News</a>
+            <a href="games.html">Games</a>
+            <a href="tools.html">Tools</a>
+            <a href="about.html">About</a>
+        </div>
+        <h1>In the news</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2018-10-02-mahjong-demo2.html
+                ">
+                OGS Mahjong 2: Demo 2
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2018-10-02 00:00
+            </p>
+            <div class="news_item_contents">
+                <figure>
+<img src="images/2018-10-02-mahjong-demo2.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>We are glad to announce the release of the second demonstration of OGS Mahjong 2. The purposes of this release were to refine our development techniques and build a solid cross-platform foundation.</p>
 <p><strong>Release</strong></p>
-
-<p>Run the latest version of OGS Mahjong 2 in your web browser:</p>
-
-<p><a href="http://ogstudio.github.io/ogs-mahjong">http://ogstudio.github.io/ogs-mahjong</a></p>
-
-<p>You are encouraged to run the game with <code>seed</code> parameter like this:</p>
-
-<p><a href="http://ogstudio.github.io/ogs-mahjong?seed=0">http://ogstudio.github.io/ogs-mahjong?seed=0</a></p>
-
+<p>Run the latest version of OGS Mahjong 2 in your web browser: <a href="http://ogstudio.github.io/ogs-mahjong">http://ogstudio.github.io/ogs-mahjong</a></p>
+<p>You are encouraged to run the game with <code>seed</code> parameter like this: <a href="http://ogstudio.github.io/ogs-mahjong?seed=0">http://ogstudio.github.io/ogs-mahjong?seed=0</a></p>
 <p>This allows you to play the same layout each time you launch the game.</p>
-
-<p>Each seed uniquely identifies the placement of tiles. Thus, different seeds</p>
-
-<p>give you a different experience.</p>
-
+<p>Each seed uniquely identifies the placement of tiles. Thus, different seeds give you a different experience.</p>
 <p><strong>Development techniques and foundation</strong></p>
-
-<p>During the second demonstration development, we switched from standard</p>
-
-<p>development to <a href="2018-06-27-example-driven-development.html">example-driven one</a>. This resulted in the</p>
-
-<p>creation of three distinct repositories to back the development of OGS Mahjong 2:</p>
-
+<p>During the second demonstration development, we switched from standard development to <a href="2018-06-27-example-driven-development.html">example-driven one</a>. This resulted in the creation of three distinct repositories to back the development of OGS Mahjong 2:</p>
 <ul>
-<li><p><a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples">OpenSceneGraph cross-platform examples</a> repository provides cross-platform foundation like resource handling, render window setup, etc.</p></li>
-<li><p><a href="https://github.com/OGStudio/ogs-mahjong-components">OGS Mahjong components</a> repository provides Mahjong specific functionality like parsing layout, matching tiles, etc.</p></li>
-<li><p><a href="https://bitbucket.org/ogstudio-games/ogs-mahjong">OGS Mahjong</a> repository contains snapshots of <code>OGS Mahjong components</code> features that comprise specific game version. E.g., <code>Demo 2</code> version is almost identical to <a href="https://github.com/OGStudio/ogs-mahjong-components/tree/master/05.ColorfulStatus">05.ColorfulStatus</a> example of <code>OGS Mahjong components</code>.</p></li>
+<li><a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples">OpenSceneGraph cross-platform examples</a> repository provides cross-platform foundation like resource handling, render window setup, etc.</li>
+<li><a href="https://github.com/OGStudio/ogs-mahjong-components">OGS Mahjong components</a> repository provides Mahjong specific functionality like parsing layout, matching tiles, etc.</li>
+<li><a href="https://bitbucket.org/ogstudio-games/ogs-mahjong">OGS Mahjong</a> repository contains snapshots of <code>OGS Mahjong components</code> features that comprise specific game version. E.g., <code>Demo 2</code> version is almost identical to <a href="https://github.com/OGStudio/ogs-mahjong-components/tree/master/05.ColorfulStatus">05.ColorfulStatus</a> example of <code>OGS Mahjong components</code>.</li>
 </ul>
-
 <p><strong>Beyond Mahjong solitaire</strong></p>
-
-<p>In addition to <code>seed</code> parameter, you can let the game use remote layout hosted at GitHub:</p>
-
-<p><a href="http://ogstudio.github.io/ogs-mahjong?seed=0&amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout">http://ogstudio.github.io/ogs-mahjong?seed=0&amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout</a></p>
-
-<p>Utilizing remote resources is an extremely powerful approach allowing anyone</p>
-
-<p>to create a layout of his/her choice and see the layout in action instantly.</p>
-
+<p>In addition to <code>seed</code> parameter, you can let the game use remote layout hosted at GitHub: <a href="http://ogstudio.github.io/ogs-mahjong?seed=0&amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout">http://ogstudio.github.io/ogs-mahjong?seed=0&amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout</a></p>
+<p>Utilizing remote resources is an extremely powerful approach allowing anyone to create a layout of his/her choice and see the layout in action instantly.</p>
 <p>Our next step is to turn game logic into a resource, too.</p>
 
-</div>
             </div>
+        </div>
         </center>
         <script type="text/javascript">
         </script>

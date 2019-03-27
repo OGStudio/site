@@ -6,28 +6,21 @@ Lang: en
 
 ![Screenshot][screenshot]
 
-We are glad to announce the release of the second demonstration of OGS Mahjong 2.
-The purposes of this release were to refine our development techniques and
-build a solid cross-platform foundation.
+We are glad to announce the release of the second demonstration of OGS Mahjong 2.  The purposes of this release were to refine our development techniques and build a solid cross-platform foundation.
 
 **Release**
 
-Run the latest version of OGS Mahjong 2 in your web browser:
-[http://ogstudio.github.io/ogs-mahjong](http://ogstudio.github.io/ogs-mahjong)
+Run the latest version of OGS Mahjong 2 in your web browser: [http://ogstudio.github.io/ogs-mahjong](http://ogstudio.github.io/ogs-mahjong)
 
-You are encouraged to run the game with `seed` parameter like this:
-[http://ogstudio.github.io/ogs-mahjong?seed=0](http://ogstudio.github.io/ogs-mahjong?seed=0)
+You are encouraged to run the game with `seed` parameter like this: [http://ogstudio.github.io/ogs-mahjong?seed=0](http://ogstudio.github.io/ogs-mahjong?seed=0)
 
 This allows you to play the same layout each time you launch the game.
 
-Each seed uniquely identifies the placement of tiles. Thus, different seeds
-give you a different experience.
+Each seed uniquely identifies the placement of tiles. Thus, different seeds give you a different experience.
 
 **Development techniques and foundation**
 
-During the second demonstration development, we switched from standard
-development to [example-driven one][article-2018-june]. This resulted in the
-creation of three distinct repositories to back the development of OGS Mahjong 2:
+During the second demonstration development, we switched from standard development to [example-driven one][article-2018-june]. This resulted in the creation of three distinct repositories to back the development of OGS Mahjong 2:
 
 * [OpenSceneGraph cross-platform examples][osgcpe] repository provides cross-platform foundation like resource handling, render window setup, etc.
 * [OGS Mahjong components][omc] repository provides Mahjong specific functionality like parsing layout, matching tiles, etc.
@@ -35,17 +28,15 @@ creation of three distinct repositories to back the development of OGS Mahjong 2
 
 **Beyond Mahjong solitaire**
 
-In addition to `seed` parameter, you can let the game use remote layout hosted at GitHub:
-[http://ogstudio.github.io/ogs-mahjong?seed=0&layout=github://OGStudio/ogs-mahjong-components/data/cat.layout](http://ogstudio.github.io/ogs-mahjong?seed=0&layout=github://OGStudio/ogs-mahjong-components/data/cat.layout)
+In addition to `seed` parameter, you can let the game use remote layout hosted at GitHub: [http://ogstudio.github.io/ogs-mahjong?seed=0&layout=github://OGStudio/ogs-mahjong-components/data/cat.layout](http://ogstudio.github.io/ogs-mahjong?seed=0&layout=github://OGStudio/ogs-mahjong-components/data/cat.layout)
 
-Utilizing remote resources is an extremely powerful approach allowing anyone
-to create a layout of his/her choice and see the layout in action instantly.
+Utilizing remote resources is an extremely powerful approach allowing anyone to create a layout of his/her choice and see the layout in action instantly.
 
 Our next step is to turn game logic into a resource, too.
 
-[screenshot]: {attach}/images/2018-10-02-mahjong-demo2.png
+[screenshot]: images/2018-10-02-mahjong-demo2.png
 
-[article-2018-june]: {filename}/articles/2018-06-27-example-driven-development.md
+[article-2018-june]: 2018-06-27-example-driven-development.html
 [osgcpe]: https://github.com/OGStudio/openscenegraph-cross-platform-examples
 [omc]: https://github.com/OGStudio/ogs-mahjong-components
 [ogs-mahjong]: https://bitbucket.org/ogstudio-games/ogs-mahjong

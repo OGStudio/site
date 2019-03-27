@@ -43,11 +43,13 @@
                 color: #3A91CB;
                 text-decoration: none;
             }
-            #contents
+            .news_item
             {
                 background: #FFFFFF;
                 width: 720px;
                 padding: 10px;
+                margin-top: 30px;
+                margin-bottom: 30px;
                 border: 1px solid #E0E0E0;
                 text-align: left;
             }
@@ -65,113 +67,65 @@
     </head>
     <body>
         <center>
-            <div id="header">
-                <a href="index.html">News</a>
-                <a href="games.html">Games</a>
-                <a href="tools.html">Tools</a>
-                <a href="about.html">About</a>
-            </div>
-            <h1>In the news</h1>
-            <div id="contents">
-
-<h2 class="news_item_title">
-<a href="2018-11-19-ideal-gamedev.html">
-Ideal games and game development tools
-</a>
-</h2>
-
-<p class="news_item_date">
-2018-11-19 00:00
-</p>
-
-<div class="news_item_contents">
-<p><img src="images/2018-11-19-ideal-gamedev.png" alt="Screenshot" /></p>
-
-<p>In this article, we discuss how ideal video game and video game development</p>
-
-<p>tool look like, in our opinion.</p>
-
+        <div id="header">
+            <a href="index.html">News</a>
+            <a href="games.html">Games</a>
+            <a href="tools.html">Tools</a>
+            <a href="about.html">About</a>
+        </div>
+        <h1>In the news</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2018-11-19-ideal-gamedev.html
+                ">
+                Ideal games and game development tools
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2018-11-19 00:00
+            </p>
+            <div class="news_item_contents">
+                <figure>
+<img src="images/2018-11-19-ideal-gamedev.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>In this article, we discuss how ideal video game and video game development tool look like, in our opinion.</p>
 <p><strong>Questions</strong></p>
-
-<p>As you know, the <a href="{filename}/pages/about.md">goals of Opensource Game Studio</a> are:</p>
-
+<p>As you know, the <a href="about.html">goals of Opensource Game Studio</a> are:</p>
 <ul>
-<li><p>creation of free video game development tools</p></li>
-<li><p>making video games with those tools</p></li>
-<li><p>preparing video game development tutorials</p></li>
+<li>creation of free video game development tools</li>
+<li>making video games with those tools</li>
+<li>preparing video game development tutorials</li>
 </ul>
-
 <p>This time we asked ourselves two simple questions:</p>
-
 <ul>
-<li><p>What is an ideal video game?</p></li>
-<li><p>What is an ideal video game development tool?</p></li>
+<li>What is an ideal video game?</li>
+<li>What is an ideal video game development tool?</li>
 </ul>
-
 <p>The best answers we could think of are below.</p>
-
 <p><strong>Answer 1: A video game is ideal if it delivers maximum pleasure possible</strong></p>
-
-<p>While content is probably the most important aspect to keep a player invested</p>
-
-<p>into the game, the technical side is the transport to deliver that content.</p>
-
-<p>There are quite a few technical problems that may damage otherwise excellent content of a game:</p>
-
+<p>While content is probably the most important aspect to keep a player invested into the game, the technical side is the transport to deliver that content. There are quite a few technical problems that may damage otherwise excellent content of a game:</p>
 <ul>
-<li><p>insufficient accessibility: the game does not run on your hardware</p></li>
-<li><p>insufficient optimization: the game is slow</p></li>
-<li><p>critical bugs: the game crashes from time to time</p></li>
+<li>insufficient accessibility: the game does not run on your hardware</li>
+<li>insufficient optimization: the game is slow</li>
+<li>critical bugs: the game crashes from time to time</li>
 </ul>
-
-<p>We work hard to make sure the games we create are accessible everywhere.</p>
-
-<p>That's why we released</p>
-
-<p><a href="2018-10-02-mahjong-demo2.html">the second demonstration of OGS Mahjong 2</a> only for</p>
-
-<p>the web: because you can run web version virtually anywhere.</p>
-
+<p>We work hard to make sure the games we create are accessible everywhere. That’s why we released <a href="2018-10-02-mahjong-demo2.html">the second demonstration of OGS Mahjong 2</a> only for the web: because you can run web version virtually anywhere.</p>
 <p><strong>Answer 2: A video game development tool is ideal if it lets you create a video game of your dream in the shortest time possible</strong></p>
-
-<p>Even though we put a lot of effort into sharing our knowledge through</p>
-
-<p><a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide">guides</a> and <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples">tutorials</a>, we understand that those take a lot</p>
-
-<p>of time to study. One can't possibly make even a simple video game like</p>
-
-<p><a href="https://en.wikipedia.org/wiki/Concentration_(game)">Memory</a> without performing the following steps:</p>
-
+<p>Even though we put a lot of effort into sharing our knowledge through <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide">guides</a> and <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples">tutorials</a>, we understand that those take a lot of time to study. One can’t possibly make even a simple video game like <a href="https://en.wikipedia.org/wiki/Concentration_(game)">Memory</a> without performing the following steps:</p>
 <ul>
-<li><p>configure the development environment</p></li>
-<li><p>write code</p></li>
-<li><p>build an application</p></li>
-<li><p>debug the application</p></li>
-<li><p>repeat <code>write-build-debug</code> steps as many times as necessary</p></li>
+<li>configure the development environment</li>
+<li>write code</li>
+<li>build an application</li>
+<li>debug the application</li>
+<li>repeat <code>write-build-debug</code> steps as many times as necessary</li>
 </ul>
+<p>Writing code and debugging are probably the ultimate forms of input and output of any software, so we can’t escape those. However, there are ways to completely remove (or at least significantly decrease) the need for <code>development environment setup</code> and <code>build</code> steps. And this is what we are going to do in the coming months.</p>
+<p>Our goal for the coming months is to create a video game development tool that would allow any programmer (or sufficiently skilled person) to create the <a href="https://en.wikipedia.org/wiki/Concentration_(game)">Memory</a> video game from scratch in an hour.</p>
+<p>That’s it for discussing how ideal video game and video game development tool look like, in our opinion.</p>
 
-<p>Writing code and debugging are probably the ultimate forms of input and output</p>
-
-<p>of any software, so we can't escape those. However, there are ways to</p>
-
-<p>completely remove (or at least significantly decrease) the need for</p>
-
-<p><code>development environment setup</code> and <code>build</code> steps. And this is what we are</p>
-
-<p>going to do in the coming months.</p>
-
-<p>Our goal for the coming months is to create a video game development tool that</p>
-
-<p>would allow any programmer (or sufficiently skilled person) to create the</p>
-
-<p><a href="https://en.wikipedia.org/wiki/Concentration_(game)">Memory</a> video game from scratch in an hour.</p>
-
-<p>That's it for discussing how ideal video game and video game development tool</p>
-
-<p>look like, in our opinion.</p>
-
-</div>
             </div>
+        </div>
         </center>
         <script type="text/javascript">
         </script>

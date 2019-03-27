@@ -6,18 +6,9 @@ Lang: en
 
 ![Screenshot][screenshot]
 
-This article summarizes the work we did to produce the first two
-cross-platform OpenSceneGraph examples.
+This article summarizes the work we did to produce the first two cross-platform OpenSceneGraph examples.
 
-By the time [the first technology demonstration of OGS Mahjong 2][tech-demo-1]
-has been released, we've already had [issue request][android-image-issue]
-(to explain how to load images with OpenSceneGraph on Android) hanging for some
-time. We considered creating a new tutorial for
-[OpenSceneGraph cross-platform guide][osgcpg] at first. However, we realized
-that it's time-consuming and excessive for such a tiny topic (compared to
-what an average game has) as image loading. We decided to continue sharing our
-knowledge in the form of concrete examples. That's how
-[OpenSceneGraph cross-platform examples][osgcpe] were born.
+By the time [the first technology demonstration of OGS Mahjong 2][tech-demo-1] has been released, we've already had [issue request][android-image-issue] (to explain how to load images with OpenSceneGraph on Android) hanging for some time. We considered creating a new tutorial for [OpenSceneGraph cross-platform guide][osgcpg] at first. However, we realized that it's time-consuming and excessive for such a tiny topic (compared to what an average game has) as image loading. We decided to continue sharing our knowledge in the form of concrete examples. That's how [OpenSceneGraph cross-platform examples][osgcpe] were born.
 
 Each example:
 
@@ -36,9 +27,9 @@ We will be adding new examples as we proceed with OGS Mahjong 2 development.
 That's it for summarizing the work we did to produce the first two cross-platform OpenSceneGraph examples.
 
 
-[screenshot]: {attach}/images/2018-04-20-openscenegraph-examples.png
+[screenshot]: images/2018-04-20-openscenegraph-examples.png
 
-[tech-demo-1]: {filename}/articles/2018-02-16-mahjong-techdemo1-gameplay.md
+[tech-demo-1]: 2018-02-16-mahjong-techdemo1-gameplay.html
 [android-image-issue]: https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues/4
 [osgcpg]: https://github.com/OGStudio/openscenegraph-cross-platform-guide
 [osgcpe]: https://github.com/OGStudio/openscenegraph-cross-platform-examples

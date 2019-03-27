@@ -24,7 +24,7 @@ def newsExcerpt(article):
         excerpt += ln
         if (len(excerpt) >= charsLimit):
             break
-    excerpt += " . . ."
+    excerpt += "..."
     # Compose links section.
     links = ""
     for ln in lines:

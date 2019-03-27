@@ -14,3 +14,5 @@ $GEN $STG/02*/{Variants.txt,templates} $STG/{01,02}*/variants
 $GEN $STG/03*/{Variants.txt,templates} $STG/{01,02,03}*/variants
 # 04.News.
 $GEN $STG/04*/{Variants.txt,templates} $STG/{01,02,03,04}*/variants
+# 05.NewsTemplates.
+$GEN $STG/05*/{Variants.txt,templates} $STG/{01,02,03,04,05}*/variants

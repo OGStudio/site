@@ -6,9 +6,7 @@ Lang: en
 
 ![Screenshot][screenshot]
 
-We are glad to announce the release of the first technical demonstration of
-OGS Mahjong 2. The purpose of this release was to verify gameplay across
-supported platforms.
+We are glad to announce the release of the first technical demonstration of OGS Mahjong 2. The purpose of this release was to verify gameplay across supported platforms.
 
 Get techdemo for your platform:
 
@@ -28,7 +26,7 @@ Notes:
 That's it for now, have a nice testing!
 
 
-[screenshot]: {attach}/images/2018-02-16-mahjong-techdemo1-gameplay.png
+[screenshot]: images/2018-02-16-mahjong-techdemo1-gameplay.png
 
 [tech-demo-1-web]: https://ogstudio.github.io/game-mahjong/versions/013/mjin-player.html
 [tech-demo-1-android]: https://drive.google.com/open?id=1KW8IEN8Dpz8ODeg8BctVSJyzj9-AL9hR
