@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 10px;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding-left: 30px;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            .news_item
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 10px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="header">
+            <a href="index.html">News</a>
+            <a href="games.html">Games</a>
+            <a href="tools.html">Tools</a>
+            <a href="about.html">About</a>
+        </div>
+        <h1>In the news</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2017-09-mjin-world-birth.html
+                ">
+                The birth of MJIN world
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2017-09-10 00:00
+            </p>
+            <div class="news_item_contents">
+                <figure>
+<img src="images/2017-09-mjin-world-birth.png" alt="The birth of MJIN world" /><figcaption>The birth of MJIN world</figcaption>
+</figure>
+<p>This article describes the birth of MJIN world in August 2017.</p>
+<p><strong>mjin-player</strong></p>
+<p>As you know, <a href="%7Bfilename%7D/articles/2017-08-scripting-research.md">we spent July to research scripting</a>. We found a solution that satisfies the following criteria. Scripts should:</p>
+<ol start="0" type="1">
+<li>run unchanged on all supported platforms</li>
+<li>allow extending C++ code</li>
+</ol>
+<p>We have verified the second criterion by writing a sample application. The first criterion was taken for granted because it SHOULD be true.</p>
+<p>At the time, we saw two ways to verify the first criterion:</p>
+<ol start="0" type="1">
+<li>create one sample application for each platform to verify scripting only</li>
+<li>create a single cross-platform application, which can run any code</li>
+</ol>
+<p>We chose the second approach because it is more beneficial in the long run. As you might have guessed, <a href="https://bitbucket.org/ogstudio/mjin-player">mjin-player</a> is that application.</p>
+<p>mjin-player serves as a base for the rest of MJIN projects to make them run on all supported platforms. However, there’s no magic trick to hide the projects from the platform, and there was no such intention. Instead, mjin-player provides a consistent set of rules how other MJIN projects should be structured to be able to run on all supported platforms.</p>
+<p><strong>mjin-application</strong></p>
+<p>This set of rules for MJIN projects is packaged into <a href="https://bitbucket.org/ogstudio/mjin-application">mjin-application</a>. mjin-application is a library that provides basic functionality every MJIN project would need and nothing more. For instance, mjin-application does not and will not contain scripting or any other specific functionality.</p>
+<p><strong>MJIN world</strong></p>
+<p>So what is <a href="https://bitbucket.org/ogstudio/mjin">MJIN world</a>? It’s a set of projects that constitute our game development tools. mjin-player and mjin-application are the first bricks of the newly born MJIN world. A lot more to come. Stay tuned for the brighter MJIN future.</p>
+<p>That’s it for describing the birth of MJIN world in August 2017.</p>
+
+            </div>
+        </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

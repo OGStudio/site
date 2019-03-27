@@ -16,7 +16,7 @@ def newsExcerpt(article):
     # 2. Append `...` at the end to signify `more`
     # 3. Append links section of markdown content
     # 4. Convert resulting content to HTML, this is an excerpt
-    charsLimit = 400
+    charsLimit = 250
     lines = article.contents.splitlines(True)
     # Compose excerpt section.
     excerpt = ""

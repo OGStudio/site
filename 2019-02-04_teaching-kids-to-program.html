@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 10px;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding-left: 30px;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            .news_item
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 10px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="header">
+            <a href="index.html">News</a>
+            <a href="games.html">Games</a>
+            <a href="tools.html">Tools</a>
+            <a href="about.html">About</a>
+        </div>
+        <h1>In the news</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2019-02-04_teaching-kids-to-program.html
+                ">
+                Teaching kids to program
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2019-02-04 00:00
+            </p>
+            <div class="news_item_contents">
+                <figure>
+<img src="images/2019-02-04_teaching-kids-to-program-team.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>In this article, Michael shares his experience of teaching kids to program.</p>
+<p>Here’s what he covers:</p>
+<ul>
+<li>organization of the learning process</li>
+<li>learning plan</li>
+<li>memory game</li>
+<li>development tools</li>
+<li>lessons</li>
+<li>results and plans</li>
+</ul>
+<p><strong>Organization of the learning process</strong></p>
+<p>The learning process is conducted as part of corporate social responsibility: a company provides a room with equipment and connects employees that want to try themselves in the role of teachers with employees that want their kids educated. All this is done voluntarily.</p>
+<p>Potential teachers are divided into groups so that each group contains three teachers: experienced one and two novice ones. Such a group of three teachers leads a group of students. Students are divided into groups by age and skills.</p>
+<p>I participated in the program as a teacher for the second time in 2018. The kids were around ten years old. Our group was active from October to December of 2018 each Saturday, 10:00-12:00. Using my position as a teacher, I’ve also brought my wife in as a student.</p>
+<p><strong>Learning plan</strong></p>
+<p>The first time I participated in the program, our group taught kids rather mindlessly: we were coming up with simple tasks to explain different operators. By the end of the course we had nothing concrete to evaluate, analyze, and share.</p>
+<p>This second time I decided we are going to create a memory game with kids. I decided to consider the course successful if by the end of the course each kid would be able to create a simple memory game from scratch in an hour.</p>
+<p>To achieve that, we were recreating the same game from scratch each lesson. I’d like to stress that we did not use personal accounts to save progress. Our task was to save the skill of game creation in the head, not a PC.</p>
+<p><strong>Memory game</strong></p>
+<p>Let’s see what the memory game is.</p>
+<p><strong>1)</strong> In the simplest case we have 16 cards, only 8 of them are unique, the rest 8 are duplicates of the unique ones.</p>
+<figure>
+<img src="images/2019-02-04_teaching-kids-to-program-all-cards-face-up.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>As you can see, we only have two cards with a cat, only two cards with a dog, etc..</p>
+<p><strong>2)</strong> At the start we shuffle the cards and place them with their faces down.</p>
+<figure>
+<img src="images/2019-02-04_teaching-kids-to-program-all-cards-face-down.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p><strong>3)</strong> The first game player turns a pair of cards.</p>
+<figure>
+<img src="images/2019-02-04_teaching-kids-to-program-first-pair.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p><strong>4)</strong> If the cards differ they are once again turned face down.</p>
+<figure>
+<img src="images/2019-02-04_teaching-kids-to-program-all-cards-face-down.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p><strong>5)</strong> The next player turns another pair of cards.</p>
+<figure>
+<img src="images/2019-02-04_teaching-kids-to-program-second-pair.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p><strong>6)</strong> If the cards are the same, they are removed from the field.</p>
+<figure>
+<img src="images/2019-02-04_teaching-kids-to-program-remove-pair.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>The goal of the game is to remove all cards from the field. There’s no competition here so the game can be played alone.</p>
+<p>From one hand, the memory game is rather simple. From the other hand, the game implementation requires essential functionality each more or less complex game has:</p>
+<ul>
+<li>creation of items</li>
+<li>arrangement of items</li>
+<li>selection of items</li>
+<li>comparison of items</li>
+<li>removal of matching items</li>
+</ul>
+<p><strong>Development tools</strong></p>
+<p>We used Scratch as our development tool. <a href="https://scratch.mit.edu/">Scratch</a> is a great tool to teach kids to program because each action, each operation is represented graphically.</p>
+<p>For example, you can rotate a cat 360 degrees in 1 second using the following script:</p>
+<figure>
+<img src="images/2019-02-04_teaching-kids-to-program-cat-script.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>Here’s how it looks like in action:</p>
+<figure>
+<img src="images/2019-02-04_teaching-kids-to-program-cat-animation.gif" alt="Animation" /><figcaption>Animation</figcaption>
+</figure>
+<p>I’d like to stress that Scratch is a rather successful solution to represent code graphically. For example, a paid solution by SAP uses similar concept of cubes to program logic:</p>
+<figure>
+<img src="images/2019-02-04_teaching-kids-to-program-sap-ui.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>Users can only input values into predefined fields. If users want more functionality they have to resort to scripts.</p>
+<p>Personally, I have never witnessed any slowdown in Scratch, and there were many in SAP’s solution.</p>
+<p><strong>The first lesson</strong></p>
+<p>The first lesson was introductory, we didn’t use PCs.</p>
+<p>The plan was to:</p>
+<ol type="1">
+<li>Meet</li>
+<li>Play the memory game with cards</li>
+<li>Learn the concept of algorithm</li>
+<li>Detail the game’s algorithm</li>
+<li>Analyze the lesson</li>
+</ol>
+<p><strong>1)</strong> Meeting</p>
+<p>Both teachers and students stand in a circle. This equalizes everyone and makes everyone a team member.</p>
+<p>The first team member tells his name and why he decided to take the course. The second team member and the rest first repeat the name and the story of each previous team member before telling their own names and stories.</p>
+<p>Here’s how it looks like:</p>
+<ol type="1">
+<li>John: “My name is John, I am going to study Scratch because my father forces me to”</li>
+<li>Alex: “This is John, he’s doing Scratch because his father wants him to do it. My name is Alex, and this is my fourth year with Scratch”</li>
+<li>Ann: “That’s John, his parents force him to do Scratch. This is Alex, he’s a Scratch veteran. And I’m Ann, a novice teacher, so I’m going to learn together with you all”</li>
+</ol>
+<p>Such a format of meeting has the following objectives:</p>
+<ul>
+<li>Getting to know each other
+<ul>
+<li>Each team member should know other team members by name</li>
+</ul></li>
+<li>Common space
+<ul>
+<li>Everyone is in the circle, not at a working desk, this prevents distraction of kids by PC games</li>
+</ul></li>
+<li>Equality
+<ul>
+<li>Both teachers and students are in the same circle, this equalizes everyone as a team member without hierarchy</li>
+</ul></li>
+<li>Attention
+<ul>
+<li>Each team member should listen carefully to be able to correctly repeat what others said</li>
+</ul></li>
+<li>Feedback
+<ul>
+<li>Each team member should be as clear as possible when expressing thoughts, otherwise nobody would be able to repeat them</li>
+</ul></li>
+<li>Fun
+<ul>
+<li>Memorization problems produce lots of laughter</li>
+</ul></li>
+</ul>
+<p><strong>2)</strong> Memory game with cards</p>
+<ol type="1">
+<li>Take 8 pairs of the same cards from two decks of cards</li>
+<li>Place the cards in 4 x 4 grid, faces down</li>
+<li>Students stand up around single table</li>
+<li>Each student, one by one, turns a pair of cards
+<ul>
+<li>If cards match, they are taken off the field</li>
+<li>If cards differ, they are once again turned face down</li>
+</ul></li>
+</ol>
+<p>Students are eager to play tabletop games. During the game party teachers say out loud each step in the game’s algorithm.</p>
+<p>After a couple of parties it’s time to find out what algorithm is.</p>
+<p><strong>3)</strong> The concept of algorithm</p>
+<ol type="1">
+<li>Ask students first, hear them out to find out their level</li>
+<li>Correct what students say if they were close to an expected answer</li>
+<li>Ask students to write an algorithm to move a man from “stands outside a room” state into “sits and works at a PC” one</li>
+</ol>
+<p>Students like to go to blackboard and write, so we ask each student to come and write a single step of the algorithm at a time. The most active student should execute the algorithm by following it strictly.</p>
+<p><strong>4)</strong> The algorithm of the game</p>
+<p>Ask students to compose the game’s algorithm. Again, let students come to the blackboard and add one step of the algorithm at a time. Once the algorithm is ready, play the game with cards once again. Now, each student should say the algorithm’s step he executes.</p>
+<p>Here’s how it looks like:</p>
+<ol type="1">
+<li>John: “Place 16 cards faces down”</li>
+<li>Alex: “Turn a pair of cards”</li>
+<li>Paul: “If the cards differ, turn them faces down again”</li>
+<li>Dan: “Turn another pair of cards”</li>
+<li>Mike: “If the cards match, take them off the field”</li>
+</ol>
+<p><strong>5)</strong> Analyze the lesson</p>
+<p>That’s it for the first lesson. Teachers finally have time to discuss the lesson: discuss the kids, approaches to shy and active kids, plan next lessons.</p>
+<p>We had the following decisions:</p>
+<ol type="1">
+<li>Arrange students so that active ones sit next to shy ones as “active-shy-active-shy-etc” so that we don’t end up with two groups of shy and active students at different sides of a room, which would hamper productivity.</li>
+<li>Only accept accurate answers from students because active students like to wriggle, which hampers discipline.</li>
+</ol>
+<p><strong>The second and the third lessons</strong></p>
+<p>We were beginning each lesson with the same meeting: we would stand up in a circle, tell our names and what we did. Those who did nothing should have said why. Just as before, everyone should first repeat what previous team members said.</p>
+<p>We spent the second lesson to create requirements for an item of the playfield and then create the item in Scratch. This was moderately successful.</p>
+<p>We spent the third lesson trying to create 16 items and arrange them in 4x4 grid. We failed miserably because we could not explain coordinate system to students. It became apparent that lesson plans were only plans, reality had its own demands.</p>
+<p>We saw two ways to approach the problem:</p>
+<ol type="1">
+<li>Keep on studying the coordinate system risking not to get the game done by the end of the course</li>
+<li>Change the game requirements so that coordinate system is not necessary</li>
+</ol>
+<p>We went the second way because, after all, we’re not a school, our goal was to teach kids to create the game, i.e., use skills in practice, not theory. That’s why we replaced 4x4 grid with a circle of 16 items.</p>
+<p>This solution sparkled a few thoughts in my head:</p>
+<ol type="1">
+<li>One can often find a simpler path to solve an issue</li>
+<li>This path is simpler to understand, albeit less flexible</li>
+<li>One can go the harder path to increase flexibility much later when it becomes absolutely necessary</li>
+<li>Simplification moves one closer to the goal, complexification moves one in the opposite direction</li>
+</ol>
+<p><strong>The fourth and the rest of the lessons</strong></p>
+<p>The fourth lesson marked the end of coming up with requirements in class because doing so started to take too much time. We chose practice over theory once again to meet the deadline. This time all requirements were conducted before the lesson. Still, nobody read them.</p>
+<p>We spent the fourth and the fifth lessons to create 16 items in circle, select a pair of items and match them.</p>
+<p>We started recreating complete game from scratch on the sixth lesson. Each time students were recreating complete game faster and faster. On the eighth lesson we introduced a leaderboard to track how fast each student recreates a specific part of the game.</p>
+<p><strong>The last lesson</strong></p>
+<p>When the last lesson approached everyone was able to create the memory game from scratch more or less independently in two hours.</p>
+<p>Here’s the leaderboard of the last lesson (names are hidden):</p>
+<figure>
+<img src="images/2019-02-04_teaching-kids-to-program-leaderboard.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>The leaderboard is in Russian, here are the captions translated:</p>
+<ul>
+<li>Name</li>
+<li>Circle of items</li>
+<li>Selection of pairs</li>
+<li>Hide all</li>
+<li>Hide a pair</li>
+</ul>
+<p>Here you can witness the creation of the memory game from scratch by the fastest student: in just half an hour.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WlA193S3SPY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p><br/></p>
+<p><strong>Results and plans</strong></p>
+<p>The results surpassed my expectations:</p>
+<ul>
+<li>three students made it in an hour or faster</li>
+<li>two students made it in an hour and a half or faster</li>
+</ul>
+<p>This year I plan on doing another round of the memory game recreation. However, I’m going to replace Scratch with Opensource Game Studio tools: the students will use Lua, Git, and GitHub Pages.</p>
+<p>That’s it for sharing Michael’s experience of teaching kids to program.</p>
+
+            </div>
+        </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>
