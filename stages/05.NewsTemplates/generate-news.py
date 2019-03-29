@@ -98,6 +98,7 @@ def newsExcerptIndex(article, excerpt, newsExcerptTemplate):
 
     contents = contents.replace("NEWS_EXCERPT_TITLE", article.title)
     contents = contents.replace("NEWS_EXCERPT_DATE", article.date)
+    excerpt = excerpt.encode("utf-8")
     contents = contents.replace("NEWS_EXCERPT_CONTENTS", excerpt)
     url = article.baseName + ".html"
     contents = contents.replace("NEWS_ITEM_URL", url)
@@ -134,6 +135,7 @@ def newsItem(article, newsItemTemplate):
     contents = contents.replace("NEWS_ITEM_TITLE", article.title)
     contents = contents.replace("NEWS_ITEM_DATE", article.date)
     html = pypandoc.convert_text(article.contents, "html", format = "md")
+    html = html.encode("utf-8")
     contents = contents.replace("NEWS_ITEM_CONTENTS", html)
     url = article.baseName + ".html"
     contents = contents.replace("NEWS_ITEM_URL", url)
@@ -159,7 +161,7 @@ def saveNewsItems(newsItems, news, dirName):
         item = newsItems[i]
         fileName = "{0}/{1}.html".format(dirName, article.baseName)
         with (open(fileName, "w")) as f:
-            f.write(item.encode("utf-8"))
+            f.write(item)
 def sortNewsDescending(news):
     # Topic: How do I sort this list in Python, if my date is in a String?
     # Source: https://stackoverflow.com/a/2589662
@@ -191,7 +193,4 @@ with (open(INDEX_FILE_NAME, "w")) as f:
     f.write(INDEX.encode("utf-8"))
 NEWS_ITEM_TEMPLATE_FILE_NAME = "news.item.template.html"
 NEWS_ITEMS = newsItems(NEWS, NEWS_ITEM_TEMPLATE_FILE_NAME)
-# Make sure news items and news contain equal number of items.
-if (len(NEWS_ITEMS) != len(NEWS)):
-    raise Exception("Number of news items and news differ")
 saveNewsItems(NEWS_ITEMS, NEWS, DIR)

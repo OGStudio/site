@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 0.7em;
+                text-align: left;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding: 0.5em 1em 0.5em 1em;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            .news_item
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 1em;
+                margin-top: 2em;
+                margin-bottom: 2em;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+            #lang
+            {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="header">
+            <a href="index.html">News</a>
+            <a href="games.html">Games</a>
+            <a href="tools.html">Tools</a>
+            <a href="about.html">About</a>
+            <div id="lang">
+                <a href="scripting-research.html">EN</a>
+                <a href="scripting-research-ru.html">RU</a>
+            </div>
+        </div>
+        <h1>In the news</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2017-08-scripting-research.html
+                ">
+                Scripting research
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2017-08-16 00:00
+            </p>
+            <div class="news_item_contents">
+<figure>
+<img src="images/2017-08-scripting-research.png" alt="Scripting research" /><figcaption>Scripting research</figcaption>
+</figure>
+<p>This article describes scripting research in July 2017.</p>
+<p><strong>Our first goal of using a scripting language was to have a platform-independent code that runs unchanged on every supported platform.</strong></p>
+<p>OGS Editor 0.10 supports Python for such a code thanks to <a href="http://swig.org/">SWIG</a>. SWIG provides a way to wrap almost any C/C++ code and use it in dozens of languages like Python, Ruby, Lua, Java, C#, etc.. SWIG really helped us taste the beauty of platform-independent code. However, SWIG only works one way: from C/C++ to a target language. This means the main application must be in the target language, and C/C++ code can only be used as a library.</p>
+<p>Having the main application in Python works fine for the desktop, but not so great for mobile and web, where C and C++ are the only natively supported cross-platform languages. There are projects like <a href="https://kivy.org">Kivy</a>, which allow you to develop cross-platform applications in Python, but they are not supported natively. This means it’s a lot of headaches when Android and iOS APIs change.</p>
+<p>Having the main application in C/C++ and the need to support scripting means that a scripting language should be interpreted by the application. This is what SWIG, Kivy, and similar projects are not meant to fulfill.</p>
+<p><strong>Our secondary goal for using a scripting language was to allow to extend C++ code.</strong></p>
+<p>OGS Editor 0.10 has some modules written in C++, and some in Python. The modules are equal from the perspective of the main application; it doesn’t care what language the module is written in.</p>
+<p>To achieve such flexibility, we introduced a so-called Environment. Each module would register the keys it responds to, and Environment would deliver corresponding messages. Technically such behaviour is achieved by inheriting a base class and overriding its methods in both C++ and a scripting language.</p>
+<p><strong>First, we evaluated Python for the role of cross-platform scripting language.</strong></p>
+<p>Since we already used Python, we started to research the possibility to run Python code on every supported platform. The result was disappointing because CPython (the default Python implementation used on the desktop) does not mention mobile and web platforms. We only found some years old forks of CPython that were claimed to work either on Android or iOS. Such a disarray was not suitable for us. We also had a look at <a href="http://pypy.org">PyPy</a>, another Python implementation. It also did not mention support for mobile and web platforms.</p>
+<p>This was a clear indication that Python community doesn’t care for mobile and web platforms. Or that nobody had time to provide the information about building Python on such platforms. Either way, it was not acceptable for us.</p>
+<p><strong>Second, we evaluated <a href="http://wren.io">Wren</a> for the role of cross-platform scripting language.</strong></p>
+<p>Wren was the first scripting language we stumbled upon in the long list of non-mainstream scripting languages.</p>
+<p>Wren claimed to be small and easy to learn. Wren also claimed to be intended for embedding in applications. Ironically, the author <a href="http://wren.io/embedding-api.html">had no time to document how to do the embedding in the first place</a>. When <a href="https://github.com/munificent/wren/issues/465">we asked for the time estimates of publishing</a> the critical part of the documentation, <a href="https://github.com/munificent/wren/issues/402">we just got a reference to another issue</a> where the other guy was asking the same question half a year ago!</p>
+<p>That’s when we ended our relationship with Wren.</p>
+<p><strong>Third, we evaluated <a href="http://chaiscript.com">Chai</a> for the role of cross-platform scripting language.</strong></p>
+<p>Chai was in the long list of non-mainstream scripting languages, too. Chai was promising because it claimed to be specifically tailored for embedding in a C++ application. We successfully managed to call a C++ function from inside Chai but failed to call a member function. <a href="http://discourse.chaiscript.com/t/cannot-call-a-function-that-accepts-a-string-and-a-vector/334">We asked for help</a>, but nobody replied.</p>
+<p>We had to end our relationship with Chai.</p>
+<p><strong>Fourth, we evaluated Lua for the role of cross-platform scripting language.</strong></p>
+<p>Lua is the mainstream language for embedding. So we decided to try the obvious choice. Documentation looked promising, too. However, by the end of reading the <a href="https://www.lua.org/pil/24.html">C API</a> chapter we had no clue how to inherit a class inside Lua.</p>
+<p>This led us to search for libraries that wrap Lua C API syntax into something more meaningful for C++. That’s how we found <a href="http://sol2.rtfd.io">Sol2</a>. Just as before, the first attempt to call a C++ member function from Lua failed. But unlike before, we asked for help and <a href="https://github.com/ThePhD/sol2/issues/465">got the help</a>! This was a refreshing surprise for us. Next, we tried to inherit a class in Lua and override the class methods. We failed, but <a href="https://github.com/ThePhD/sol2/issues/468">the author helped us out again</a>. In the end, we succeeded in inheriting a class and overriding its behaviour.</p>
+<p>That’s when we understood it’s a start for a long and mutual relationship with Sol2/Lua.</p>
+<p><strong>This search for a scripting language taught us one important lesson: people matter, not technologies.</strong></p>
+<p>There are lots of scripting languages that look shiny on the outside but are dead. Why? Because some authors don’t have time for users. In return, users don’t have time for the authors’ projects.</p>
+<p>That’s it for describing scripting research in July 2017.</p>
+
+            </div>
+        </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

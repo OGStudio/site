@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 0.7em;
+                text-align: left;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding: 0.5em 1em 0.5em 1em;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            .news_item
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 1em;
+                margin-top: 2em;
+                margin-bottom: 2em;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+            #lang
+            {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="header">
+            <a href="index-ru.html">Новости</a>
+            <a href="games-ru.html">Игры</a>
+            <a href="tools-ru.html">Инструменты</a>
+            <a href="about-ru.html">О нас</a>
+            <div id="lang">
+                <a href="mjin-world-birth.html">EN</a>
+                <a href="mjin-world-birth-ru.html">RU</a>
+            </div>
+        </div>
+        <h1>В новостях</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2017-09-mjin-world-birth-ru.html
+                ">
+                Рождение вселенной MJIN
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2017-09-10 00:00
+            </p>
+            <div class="news_item_contents">
+<figure>
+<img src="images/2017-09-mjin-world-birth.png" alt="Рождение вселенной MJIN" /><figcaption>Рождение вселенной MJIN</figcaption>
+</figure>
+<p>Эта статья описывает рождение вселенной MJIN в августе 2017.</p>
+<p><strong>mjin-player</strong></p>
+<p>Как вы знаете, <a href="%7Bfilename%7D/articles/2017-08-scripting-research-ru.md">в июле мы изучали скриптование</a>. Мы нашли решение, которое удовлетворяет следующим критериям. Скрипты должны:</p>
+<ol start="0" type="1">
+<li>исполняться в исходном виде без изменений на всех поддерживаемых платформах</li>
+<li>позволять расширять код C++</li>
+</ol>
+<p>Мы проверили второй критерий в рамках тестового приложения. В первый критерий мы просто поверили, т.к. он ДОЛЖЕН быть верен.</p>
+<p>В тот момент мы видели два варианта проверки первого критерия:</p>
+<ol start="0" type="1">
+<li>создать по одному тестовому приложению под каждую платформу для проверки лишь этого критерия</li>
+<li>создать одно кросс-платформенное приложение, которому можно скормить практически любой код</li>
+</ol>
+<p>Мы выбрали второй подход, т.к. он выгоднее в долгосрочной перспективе. Как вы уже догадались, <a href="https://bitbucket.org/ogstudio/mjin-player">mjin-player</a> является тем самым кросс-платформенным приложением.</p>
+<p>mjin-player служит базой для остальных проектов MJIN, которая позволяет этим проектам работать на всех поддерживаемых платформах. Тем не менее, в mjin-player нет никакой магии, проекты никак не скрыты от деталей платформ, да и не было такой задачи. Вместо скрытия деталей платформы mjin-player предоставляет набор правил, которым должны удовлетворять проекты MJIN для работы на всех поддерживаемых платформах.</p>
+<p><strong>mjin-application</strong></p>
+<p>Этот набор правил представлен в виде <a href="https://bitbucket.org/ogstudio/mjin-application">mjin-application</a>. mjin-application является библиотекой с базовым функционалом, необходимым для каждого проекта MJIN, но не более. Например, mjin-application не содержит и никогда не будет содержать скриптования или подобного специфического функционала.</p>
+<p><strong>Вселенная MJIN</strong></p>
+<p>Так что же такое <a href="https://bitbucket.org/ogstudio/mjin">вселенная MJIN</a>? Это множество проектов, которые являются нашими средствами для разработки игр. mjin-player и mjin-application - первые кирпичики недавно появившейся вселенной MJIN. А будет их намного больше. Оставайтесь на связи, нас ждёт светлое будущее с MJIN.</p>
+<p>На этом мы заканчиваем описание рождения вселенной MJIN в августе 2017.</p>
+
+            </div>
+        </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

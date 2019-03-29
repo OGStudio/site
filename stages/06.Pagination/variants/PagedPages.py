@@ -55,7 +55,7 @@ def pagedPages(
             paginationSection = paginationNextTemplate
             paginationSection = paginationSection.replace("NEXT_PAGE_URL", nextURL)
 
-        item = page.encode("utf-8")
+        item = page
         item = item.replace("NEWS_PAGINATION", paginationSection)
         item = item.replace("PAGE_ID", str(i + 1))
         item = item.replace("PAGES_COUNT", str(pagesCount))

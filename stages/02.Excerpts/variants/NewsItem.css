@@ -3,9 +3,9 @@ AMLEO Style
 {
     background: #FFFFFF;
     width: 720px;
-    padding: 10px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    padding: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
     border: 1px solid #E0E0E0;
     text-align: left;
 }

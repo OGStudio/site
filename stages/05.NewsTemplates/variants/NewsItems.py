@@ -16,6 +16,7 @@ def newsItem(article, newsItemTemplate):
     contents = contents.replace("NEWS_ITEM_TITLE", article.title)
     contents = contents.replace("NEWS_ITEM_DATE", article.date)
     html = pypandoc.convert_text(article.contents, "html", format = "md")
+    html = html.encode("utf-8")
     contents = contents.replace("NEWS_ITEM_CONTENTS", html)
     url = article.baseName + ".html"
     contents = contents.replace("NEWS_ITEM_URL", url)

@@ -14,7 +14,8 @@ This article explains how the third OpenSceneGraph cross-platform example opened
 
 The third OpenSceneGraph cross-platform example explains how to implement [remote debugging across platforms][osgcpe-04]. This example is less about OpenSceneGraph and more about different platforms.
 
-Remote anything nowadays assumes the use of HTTP(s) over TCP/IP. Thus, the first idea was to embed HTTP server into an application and let HTTP clients interact with the server. However, serving HTTP across all platforms is complicated:
+Remote anything nowadays assumes the use of HTTP(s) over TCP/IP. Thus, the first idea was to embed HTTP server into an application and let HTTP clients interact with the server.
+However, serving HTTP across all platforms is complicated:
 
 * desktops have firewalls
 * mobiles have restrictions on background processes

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 0.7em;
+                text-align: left;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding: 0.5em 1em 0.5em 1em;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            .news_item
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 1em;
+                margin-top: 2em;
+                margin-bottom: 2em;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+            #lang
+            {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="header">
+            <a href="index.html">News</a>
+            <a href="games.html">Games</a>
+            <a href="tools.html">Tools</a>
+            <a href="about.html">About</a>
+            <div id="lang">
+                <a href="examples-and-dependencies.html">EN</a>
+                <a href="examples-and-dependencies-ru.html">RU</a>
+            </div>
+        </div>
+        <h1>In the news</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2018-08-21-examples-and-dependencies.html
+                ">
+                Examples and dependencies
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2018-08-21 00:00
+            </p>
+            <div class="news_item_contents">
+<figure>
+<img src="images/2018-08-21-examples-and-dependencies.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>This article describes two new OpenSceneGraph cross-platform examples and the change in handling dependencies.</p>
+<p><strong>Examples of HTTP client and node selection</strong></p>
+<p>Once we finished working on <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/04.RemoteDebugging">the remote debugging example</a> and <a href="2018-06-27-example-driven-development.html">reported its completion</a>, we were surprised by the fact that secure HTTP connection between a debugged application and debug broker was only working in the web version of the example. Desktop and mobile versions only worked with insecure HTTP.</p>
+<p>Since current debug scheme has no authentication, insecure debugging over HTTP doesn’t really hurt. However, if we want to access resources located at popular sites like GitHub and BitBucket, we have to support secure HTTP.</p>
+<p>The need to support HTTPS on each platform spurred us to create <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/03.HTTPClient">HTTP client example</a>. Turned out, each platform had its own preferred way of doing secure HTTP:</p>
+<ul>
+<li>web (Emscripten) provides Fetch API</li>
+<li>desktop is fine with Mongoose and OpenSSL</li>
+<li>Android provides HttpUrlConnection in Java</li>
+<li>iOS provides NSURLSession in Objective-C</li>
+</ul>
+<p>The need to support different languages on different platforms resulted in the creation of so-called ‘host-guest’ pattern:</p>
+<ul>
+<li>guest (platform agnostic)
+<ul>
+<li>provides networking representation</li>
+<li>used by cross-platform C++ code</li>
+</ul></li>
+<li>host (specific platform)
+<ul>
+<li>polls guest for pending requests</li>
+<li>processes them</li>
+<li>reports results back to the guest</li>
+</ul></li>
+</ul>
+<p><a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/05.NodeSelection">Node selection example</a> was straightforward and caused no troubles.</p>
+<p><strong>The change in handling dependencies</strong></p>
+<p>For over a year we had to deal with the following <a href="http://forum.openscenegraph.org/viewtopic.php?t=17443">shortcomings</a> when building OpenSceneGraph across platforms using conventional methods:</p>
+<ul>
+<li>macOS builds failing due to certain compile flags we use</li>
+<li>hacking PNG plugin safety guards to have PNG support under Android</li>
+<li>iOS simulator and device builds of the same example being in separate Xcode projects</li>
+<li>OpenSceneGraph taking 20-30 minutes to build</li>
+</ul>
+<p>These shortcomings were slowing us down and complicating the development of new examples. Upon hitting these problems ten more times this month we decided it was time to solve them once and for all. Now OpenSceneGraph is built as part of each example in 2-3 minutes, and there’s no more dependency magic involved. We took the same approach of building dependencies as part of each example to other external libraries like Mongoose and libpng-android, too.</p>
+<p>With these obstacles out of the way, we can now iterate faster. Just in time for the next technical demonstration of Mahjong 2!</p>
+<p>That’s it for describing two new OpenSceneGraph cross-platform examples and the change in handling dependencies.</p>
+
+            </div>
+        </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

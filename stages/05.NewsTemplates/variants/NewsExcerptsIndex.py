@@ -20,6 +20,7 @@ def newsExcerptIndex(article, excerpt, newsExcerptTemplate):
 
     contents = contents.replace("NEWS_EXCERPT_TITLE", article.title)
     contents = contents.replace("NEWS_EXCERPT_DATE", article.date)
+    excerpt = excerpt.encode("utf-8")
     contents = contents.replace("NEWS_EXCERPT_CONTENTS", excerpt)
     url = article.baseName + ".html"
     contents = contents.replace("NEWS_ITEM_URL", url)

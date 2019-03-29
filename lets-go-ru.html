@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 0.7em;
+                text-align: left;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding: 0.5em 1em 0.5em 1em;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            .news_item
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 1em;
+                margin-top: 2em;
+                margin-bottom: 2em;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+            #lang
+            {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="header">
+            <a href="index-ru.html">Новости</a>
+            <a href="games-ru.html">Игры</a>
+            <a href="tools-ru.html">Инструменты</a>
+            <a href="about-ru.html">О нас</a>
+            <div id="lang">
+                <a href="lets-go.html">EN</a>
+                <a href="lets-go-ru.html">RU</a>
+            </div>
+        </div>
+        <h1>В новостях</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2017-03-16_lets-go-ru.html
+                ">
+                Поехали
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2017-03-16 00:00
+            </p>
+            <div class="news_item_contents">
+<figure>
+<img src="images/2017-03_lets-go.png" alt="Let’s go" /><figcaption>Let’s go</figcaption>
+</figure>
+<p>В этой статье мы расскажем о результатах нашей работы в январе и феврале 2017: отображении куба на iOS/Веб и нашем инструменте для создания самоучителей.</p>
+<p><strong>Отображение куба на iOS/Web</strong></p>
+<p>К нашему удивлению, мы смогли отобразить простой красный куб на <a href="https://twitter.com/OpenGameStudio/status/826816343433498627">iOS</a> и <a href="https://twitter.com/OpenGameStudio/status/829731986264698881">Веб</a> довольно быстро: в начале февраля. Тем не менее, это лишь начало поддержки платформ Android, iOS и Веб. Впереди нас ждёт тернистая дорога, т.к. нам предстоит сделать ещё много вещей, прежде чем мы сможем объявить о полноценной поддержке этих платформ: визуальные эффекты, скрипты Python, архивы данных.</p>
+<p>Т.к. нам потребовалось четыре месяца для начала поддержки платформ Android, iOS и Веб, мы решили поделиться своими знаниями и помочь сообществу OpenSceneGraph. Мы напишем руководство по использованию OpenSceneGraph на ПК, мобилках и Вебе. Мы верим: чем более распространён OpenSceneGraph, тем сильнее наши собственные технологии. Как сказал Исаак Ньютон: “Если я видел дальше других, то потому, что стоял на плечах гигантов”. OpenSceneGraph - наш гигант.</p>
+<p><strong>Инструмент для создания самоучителей</strong></p>
+<p>Имея за плечами опыт проведения четырёх прямых эфиров, нам стало ясно, что руководство по использованию OpenSceneGraph будет полезно лишь при наличии видео. Но голое видео способно отразить лишь то, что мы делаем, но не то, почему мы делаем именно это и именно так. Поэтому мы решили совместить видео с текстом в форме как субтитров к видео, так и отдельных статей.</p>
+<p>Первую попытку совмещения видео с текстом мы начали с помощью <a href="http://openshotvideo.com">OpenShot</a>. Инструмент хороший, но с первого же дня использования стали очевидны следующие ограничения:</p>
+<ul>
+<li>Настройка моментов отображения текста и анимаций занимает много времени</li>
+<li>Файл проекта и исходные ресурсы сложно положить в систему контроля версий</li>
+</ul>
+<p>Т.к. руководство по использованию OpenSceneGraph будет состоять из нескольких самоучителей, мы решили автоматизировать процесс. Быстрый поиск рассказал нам о существовании замечательного мультимедийного фреймворка <a href="http://mltframework.org">MLT</a>, который используется и в OpenShot. С помощью MLT мы быстро сделали свой инструмент для создания самоучителей.</p>
+<p>На текущий момент наш инструмент позволяет совместить видео и текст с помощью простого текстового файла:</p>
+<pre><code>background bg.png
+text 5 Let&#39;s install Blender
+video 0:6 install_blender.mp4
+text 5 Installing it with apt
+video 6:26 install_blender.mp4
+text 5 We&#39;re still installing it
+video 26:56 install_blender.mp4
+text 5 Congratulations! We just finished installing Blender</code></pre>
+<p>Это реальный скрипт. Конечный результат можно увидеть <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/tree/master/tutorial-tool">здесь</a>.</p>
+<p>На этом мы заканчиваем рассказ о результатах нашей работы в январе и феврале 2017: отображении куба на iOS/Веб и нашем инструменте для создания самоучителей.</p>
+
+            </div>
+        </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

@@ -18,3 +18,5 @@ $GEN $STG/04*/{Variants.txt,templates} $STG/0{1,2,3,4}*/variants
 $GEN $STG/05*/{Variants.txt,templates} $STG/0{1,2,3,4,5}*/variants
 # 06.Pagination.
 $GEN $STG/06*/{Variants.txt,templates} $STG/0{1,2,3,4,5,6}*/variants
+# 07.Language.
+$GEN $STG/07*/{Variants.txt,templates} $STG/0{1,2,3,4,5,6,7}*/variants

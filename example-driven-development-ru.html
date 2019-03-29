@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 0.7em;
+                text-align: left;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding: 0.5em 1em 0.5em 1em;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            .news_item
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 1em;
+                margin-top: 2em;
+                margin-bottom: 2em;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+            #lang
+            {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="header">
+            <a href="index-ru.html">Новости</a>
+            <a href="games-ru.html">Игры</a>
+            <a href="tools-ru.html">Инструменты</a>
+            <a href="about-ru.html">О нас</a>
+            <div id="lang">
+                <a href="example-driven-development.html">EN</a>
+                <a href="example-driven-development-ru.html">RU</a>
+            </div>
+        </div>
+        <h1>В новостях</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2018-06-27-example-driven-development-ru.html
+                ">
+                Разработка через создание примеров
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2018-06-27 00:00
+            </p>
+            <div class="news_item_contents">
+<figure>
+<img src="images/2018-06-27-example-driven-development.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>Эта статья описывает то, как создание третьего кросс-платформенного примера OpenSceneGraph привело нас к разработке через создание примеров.</p>
+<p><strong>ИЗМЕНЕНИЯ ОТ 2018-08</strong>: третий пример был переименован в четвёртый в связи с причинами, изложенными в <a href="2018-08-21-examples-and-dependencies-ru.html">следующей статье</a>.</p>
+<p><strong>Третий кросс-платформенный пример OpenSceneGraph</strong></p>
+<p>Третий кросс-платформенный пример OpenSceneGraph содержит реализацию <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/03.RemoteDebugging">удалённой отладки, работающей на всех поддерживаемых платформах</a>. Этот пример относится не столько к OpenSceneGraph, сколько к поддержке различных платформ.</p>
+<p>Удалённое взаимодействие ныне предполагает использование HTTP(s) поверх TCP/IP. Таким образом, первая идея реализации подразумевала встраивание сервера HTTP в приложение, чтобы клиенты HTTP могли взаимодействовать с этим сервером. Однако, раздача HTTP на различных платформах имеет свои сложности:</p>
+<ul>
+<li>на десктопах есть межсетевые экраны (firewalls)</li>
+<li>на мобилках есть ограничения по работе фоновых процессов</li>
+<li>веб-браузеры являются клиентами HTTP по дизайну</li>
+</ul>
+<p>Эти ограничения подтолкнули нас к созданию посредника между отлаживаемым приложением и пользовательским интерфейсом отладки. <a href="https://github.com/OGStudio/debug-broker">Брокер отладки</a>, небольшое приложение Node.js, стало тем самым посредником. Брокер отладки не имеет внешних зависимостей, поэтому его легко использовать практически везде. Благодаря тому, что брокер отладки - это серверное приложение, его достаточно настроить лишь раз и использовать для любого количества приложений.</p>
+<p>И <a href="https://github.com/OGStudio/debug-ui">пользовательский интерфейс отладки</a>, и <a href="https://github.com/OGStudio/debug-broker">брокер отладки</a> используют JavaScript, т.к. мы хотели сделать эти инструменты максимально доступными без предварительной установки. Данное решение привело нас к реализации инструментов именно для веб-браузеров. Десктопное приложение потребовало бы дополнительных усилий на установку и поддержку, что лишь усложнило бы работу с инструментами.</p>
+<p><strong>Разработка через создание примеров</strong></p>
+<p>После создания третьего примера мы осознали важность и достоинства разработки новых функций вне основного проекта:</p>
+<ul>
+<li>освобождение основного проекта от шума изменений (commit noise)</li>
+<li>публичное освещение новой функции приглашает всех к её изучению, критике и улучшению</li>
+</ul>
+<p>Когда мы делимся нашими знаниями:</p>
+<ul>
+<li>мы обязаны создавать документацию, объясняющую происходящее (в том числе для нас самих позже)</li>
+<li>мы обязаны сторониться непродуманных решений, т.к. они повредят нашей репутации</li>
+</ul>
+<p>С этого момента все новые функции вроде обработки ввода, загрузки раскладок Маджонга, кэширования ресурсов и т.п. мы будем сначала реализовывать в виде примеров. Мы называем этот подход разработкой через создание примеров.</p>
+<p>На этом мы заканчиваем описание того, как создание третьего кросс-платформенного примера OpenSceneGraph привело нас к разработке через создание примеров.</p>
+
+            </div>
+        </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

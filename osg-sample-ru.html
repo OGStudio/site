@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 0.7em;
+                text-align: left;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding: 0.5em 1em 0.5em 1em;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            .news_item
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 1em;
+                margin-top: 2em;
+                margin-bottom: 2em;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+            #lang
+            {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="header">
+            <a href="index-ru.html">Новости</a>
+            <a href="games-ru.html">Игры</a>
+            <a href="tools-ru.html">Инструменты</a>
+            <a href="about-ru.html">О нас</a>
+            <div id="lang">
+                <a href="osg-sample.html">EN</a>
+                <a href="osg-sample-ru.html">RU</a>
+            </div>
+        </div>
+        <h1>В новостях</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2017-05-12_osg-sample-ru.html
+                ">
+                Приложение OpenSceneGraph
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2017-05-12 00:00
+            </p>
+            <div class="news_item_contents">
+<figure>
+<img src="images/2017-05_osg-sample.png" alt="OSG sample" /><figcaption>OSG sample</figcaption>
+</figure>
+<p>Эта статья описывает создание самоучителей по сборке приложения OpenSceneGraph на Linux, macOS, Windows и Android в апреле 2017.</p>
+<p>Предыдущие самоучители описывали установку OpenSceneGraph на Linux, macOS, Windows и отображение модели с помощью стандартного инструмента <strong>osgviewer</strong>. На этот раз результатом нашей работы стало <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide-application">приложение OpenSceneGraph</a>, которое работает на Linux, macOS, Windows и Android.</p>
+<p>Приложение очень простое. Оно умеет следующее:</p>
+<ol start="0" type="1">
+<li>Создание окна для отрисовки</li>
+<li>Загрузка модели</li>
+<li>Отрисовка модели с помощью простых шейдеров GLSL</li>
+<li>Перемещение модели с помощью мыши на Linux, macOS, Windows и пальца на Android</li>
+</ol>
+<p>Создать самоучители для Linux, macOS, Windows было настолько простой и понятной задачей, что мы справились с ней за пару недель. Оставшуюся половину месяца мы потратили на создание самоучителя для Android.</p>
+<p>Наша <a href="2016-11-19_2016-october-recap-ru.html">первая успешная сборка под Android</a> в прошлом году требовала множество неочивидных телодвижений. В этот раз мы хотели получить более чистый, быстрый и дешёвый подход.</p>
+<p>Нам это удалось. В результате всё, что нужно для работы приложения OpenSceneGraph на Android, уместилось в набор из нескольких файлов и небольших изменений для стандартного проекта Android Studio (с поддержкой C++).</p>
+<p>Краткий перечень файлов:</p>
+<ol start="0" type="1">
+<li>Поверхность GLES2</li>
+<li>Activity для отрисовки на этой поверхности</li>
+<li>Интерфейс Java для нативной библиотеки</li>
+<li>Реализация нативной библиотеки на C++</li>
+<li>Файл CMake для сборки нативной библиотеки</li>
+<li>Activity layout</li>
+<li>Модель для отрисовки</li>
+</ol>
+<p>Краткий перечень изменений проекта:</p>
+<ol start="0" type="1">
+<li>Обновление Android manifest для использования GLES2 и Activity</li>
+<li>Использование файла CMake нативной библиотеки в проектном файле CMake</li>
+</ol>
+<p>Документация OpenSceneGraph предполагает сборку OpenSceneGraph вне Android Studio с помощью CMake. Такой подход имеет следующие ограничения:</p>
+<ol start="0" type="1">
+<li>Ручная сборка OpenSceneGraph под каждую платформу</li>
+<li>Ручное копирование собранных библиотек OpenSceneGraph в проект Android Studio</li>
+</ol>
+<p>Наш подход включает в себя сборку OpenSceneGraph для тех платформ, для которых собирается проект Android Studio. К тому же, OpenSceneGraph используется как часть проекта, поэтому нет никакой дополнительной рутины: достаточно просто пересобрать проект, и всё готово.</p>
+<p>На этом мы заканчиваем описание создания самоучителей по сборке приложения OpenSceneGraph на Linux, macOS, Windows и Android в апреле 2017.</p>
+
+            </div>
+        </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

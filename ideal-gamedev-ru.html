@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 0.7em;
+                text-align: left;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding: 0.5em 1em 0.5em 1em;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            .news_item
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 1em;
+                margin-top: 2em;
+                margin-bottom: 2em;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+            #lang
+            {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="header">
+            <a href="index-ru.html">Новости</a>
+            <a href="games-ru.html">Игры</a>
+            <a href="tools-ru.html">Инструменты</a>
+            <a href="about-ru.html">О нас</a>
+            <div id="lang">
+                <a href="ideal-gamedev.html">EN</a>
+                <a href="ideal-gamedev-ru.html">RU</a>
+            </div>
+        </div>
+        <h1>В новостях</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2018-11-19-ideal-gamedev-ru.html
+                ">
+                Идеальные игры и средства для их разработки
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2018-11-19 00:00
+            </p>
+            <div class="news_item_contents">
+<figure>
+<img src="images/2018-11-19-ideal-gamedev.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>В этой статье мы обсудим, как выглядят идеальные видеоигра и инструмент для разработки видеоигр, по нашему мнению.</p>
+<p><strong>Вопросы</strong></p>
+<p>Как вы знаете, <a href="about-ru.html">целями Opensource Game Studio</a> являются:</p>
+<ul>
+<li>создание бесплатных инструментов для разработки видеоигр</li>
+<li>создание видеоигр с помощью этих инструментов</li>
+<li>создание самоучителей по разработке видеоигр</li>
+</ul>
+<p>В этот раз мы решили задать себе пару простых вопросов:</p>
+<ul>
+<li>Какова идеальная видеоигра?</li>
+<li>Каков идеальный инструмент для разработки видеоигр?</li>
+</ul>
+<p>Ниже представлены наши ответы.</p>
+<p><strong>Ответ 1: Видеоигра идеальна, если она доставляет максимально возможное удовольствие</strong></p>
+<p>Несмотря на то, что содержание является, пожалуй, самой важной частью, удерживающей человека в игре, техническая сторона является транспортом для доставки этого содержания. Существует немало технических проблем, которые могут полностью испортить впечатление даже от превосходного содержания:</p>
+<ul>
+<li>недостаточная доступность: игра не идёт на оборудовании человека</li>
+<li>недостаточная оптимизация: игра тормозит</li>
+<li>критичные ошибки: игра падает время от времени</li>
+</ul>
+<p>Мы тратим много сил, чтобы сделать наши игры доступными везде. Именно поэтому мы выпустили <a href="2018-10-02-mahjong-demo2-ru.html">вторую демонстрацию OGS Mahjong 2</a> лишь для веба: т.к. вы можете запустить веб-версию практически где угодно.</p>
+<p><strong>Ответ 2: Инструмент для разработки видеоигр идеален, если он позволяет создать игру мечты в кратчайшие возможные сроки</strong></p>
+<p>Несмотря на то, что мы тратим много усилий на то, чтобы делиться своими знаниями с помощью <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide">руководств</a> и <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples">самоучителей</a>, мы осознаём, что на работу с ними уходит много времени. Сейчас нельзя создать даже простейшую <a href="https://en.wikipedia.org/wiki/Concentration_(game)">видеоигру на память</a> без выполнения следующих шагов:</p>
+<ul>
+<li>настроить окружение разработки</li>
+<li>написать код</li>
+<li>собрать приложение</li>
+<li>отладить приложение</li>
+<li>повторить шаги <code>написать-собрать-отладить</code> столько раз, сколько нужно</li>
+</ul>
+<p>Написание кода и отладка, пожалуй, являются конечными формами входа и выхода любого программного обеспечения, поэтому мы их не избежим. Однако, мы можем полностью избавиться от шагов (или хотя бы значительно сократить их) <code>настройки окружения разработки</code> и <code>сборки</code>. Именно на это мы и потратим ближайшие месяцы.</p>
+<p>Наша цель на ближайшие месяцы состоит в том, чтобы создать такой инструмент разработки видеоигр, чтобы любой программист (или достаточно квалифицированный человек) мог создать <a href="https://en.wikipedia.org/wiki/Concentration_(game)">видеоигру на память</a> с нуля за час.</p>
+<p>На этом мы заканчиваем обсуждение, как выглядят идеальные видеоигра и инструмент для разработки видеоигр, по нашему мнению.</p>
+
+            </div>
+        </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

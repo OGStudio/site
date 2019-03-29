@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 0.7em;
+                text-align: left;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding: 0.5em 1em 0.5em 1em;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            .news_item
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 1em;
+                margin-top: 2em;
+                margin-bottom: 2em;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+            #lang
+            {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="header">
+            <a href="index-ru.html">Новости</a>
+            <a href="games-ru.html">Игры</a>
+            <a href="tools-ru.html">Инструменты</a>
+            <a href="about-ru.html">О нас</a>
+            <div id="lang">
+                <a href="mahjong-demo2.html">EN</a>
+                <a href="mahjong-demo2-ru.html">RU</a>
+            </div>
+        </div>
+        <h1>В новостях</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2018-10-02-mahjong-demo2-ru.html
+                ">
+                OGS Mahjong 2: Demo 2
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2018-10-02 00:00
+            </p>
+            <div class="news_item_contents">
+<figure>
+<img src="images/2018-10-02-mahjong-demo2.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>Мы рады сообщить о выпуске второй демонстрации OGS Mahjong 2. Её целью были улучшение техники разработки и создание надёжной основы кроссплатформенной разработки.</p>
+<p><strong>Выпуск</strong></p>
+<p>Запустите последний выпуск OGS Mahjong 2 в вашем браузере: <a href="http://ogstudio.github.io/ogs-mahjong">http://ogstudio.github.io/ogs-mahjong</a></p>
+<p>Рекомендуем запускать игру с параметром <code>seed</code> следующим образом: <a href="http://ogstudio.github.io/ogs-mahjong?seed=0">http://ogstudio.github.io/ogs-mahjong?seed=0</a></p>
+<p>Это позволяет вам играть в ту же самую раскладку после перезапуска.</p>
+<p>Каждое значение зерна (seed) однозначно задаёт расположение фишек, так что разные значения зерна дают разнообразие партий.</p>
+<p><strong>Техника разработки и основа</strong></p>
+<p>Во время разработки второй демонстрации мы перешли с обычной разработки на <a href="2018-06-27-example-driven-development.html">разработку через создание примеров</a>. Это привело к появлению трёх различных хранилищ для обеспечения разработки OGS Mahjong 2:</p>
+<ul>
+<li>Хранилище <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples">кроссплатформенных примеров OpenSceneGraph</a> содержит основу вроде работы с ресурсами, создание графического окна и т.д.</li>
+<li>Хранилище <a href="https://github.com/OGStudio/ogs-mahjong-components">компонент OGS Mahjong</a> содержит специфичную для Маджонга функциональность вроде разбора раскладки, сопоставления фишек и т.д.</li>
+<li>Хранилище <a href="https://bitbucket.org/ogstudio-games/ogs-mahjong">OGS Mahjong</a> содержит снимок набора функциональностей <code>компонент OGS Mahjong</code>, которые определяют версию игры. Например, версия <code>Demo 2</code> почти полностью повторяет пример <a href="https://github.com/OGStudio/ogs-mahjong-components/tree/master/05.ColorfulStatus">05.ColorfulStatus</a> из <code>компонент OGS Mahjong</code>.</li>
+</ul>
+<p><strong>За пределами пасьянса Маджонг</strong></p>
+<p>В дополнение к параметру <code>seed</code> вы можете указать игре использовать удалённую раскладку, расположенную на GitHub: <a href="http://ogstudio.github.io/ogs-mahjong?seed=0&amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout">http://ogstudio.github.io/ogs-mahjong?seed=0&amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout</a></p>
+<p>Использование удалённых ресурсов открывает огромные возможности, т.к. позволяет любому желающему создать раскладку на свой вкус и моментально её проверить.</p>
+<p>Наш следующий шаг - это выделение игровой логики в виде ресурса.</p>
+
+            </div>
+        </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

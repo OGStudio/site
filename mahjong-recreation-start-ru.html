@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body
+            {
+                background: #FAFAFA;
+            }
+            code, pre
+            {
+                font-family: monospace, serif;
+                font-size: 1em;
+                color: #7f0a0c;
+            }
+            figure
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+            img
+            {
+                width: 720px;
+            }
+            html
+            {
+                font-family: sans-serif;
+            }
+            #header
+            {
+                background: #2BA6E3;
+                padding: 0.7em;
+                text-align: left;
+            }
+            
+            #header a
+            {
+                color: white;
+                text-decoration: none;
+                padding: 0.5em 1em 0.5em 1em;
+            }
+            a
+            {
+                color: #3A91CB;
+                text-decoration: none;
+            }
+            .news_item
+            {
+                background: #FFFFFF;
+                width: 720px;
+                padding: 1em;
+                margin-top: 2em;
+                margin-bottom: 2em;
+                border: 1px solid #E0E0E0;
+                text-align: left;
+            }
+            .news_item_contents
+            {
+                color: #444;
+                line-height: 1.5em;
+            }
+            .news_item_date
+            {
+                margin-bottom: 50px;
+                color: #aaa;
+            }
+            #lang
+            {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="header">
+            <a href="index-ru.html">Новости</a>
+            <a href="games-ru.html">Игры</a>
+            <a href="tools-ru.html">Инструменты</a>
+            <a href="about-ru.html">О нас</a>
+            <div id="lang">
+                <a href="mahjong-recreation-start.html">EN</a>
+                <a href="mahjong-recreation-start-ru.html">RU</a>
+            </div>
+        </div>
+        <h1>В новостях</h1>
+        <div class="news_item">
+            <h2 class="news_item_title">
+                <a href="
+                2018-01-26-mahjong-recreation-start-ru.html
+                ">
+                Начало воссоздания Маджонга
+                </a>
+            </h2>
+            <p class="news_item_date">
+                2018-01-26 00:00
+            </p>
+            <div class="news_item_contents">
+<figure>
+<img src="images/2018-01-26-mahjong-recreation-start.png" alt="Screenshot" /><figcaption>Screenshot</figcaption>
+</figure>
+<p>Эта статья описывает начало воссоздания игры Маджонг.</p>
+<p><strong>План</strong></p>
+<p>Мы начали воссоздание Маджонга с составления краткого плана реализации игровой механики с минимальной графикой:</p>
+<ul>
+<li>Загрузить раскладку</li>
+<li>Поместить фишки в позиции раскладки</li>
+<li>Различить фишки</li>
+<li>Реализовать выбор фишек</li>
+<li>Реализовать сравнение фишек</li>
+</ul>
+<p>Как и любой другой план, этот выглядел вполне адекватно на первый взгляд. Тем не менее стоит начать разработку, как появляются новые детали. Этот план не был исключением. Ниже представлена пара проблем, вскрывшихся во время разработки.</p>
+<p><strong>Проблема №1: предоставить бинарные ресурсы на поддерживаемых платформах</strong></p>
+<p>Маджонг будет доступен для десктопа, мобилок и веба. Каждая платформа имеет ограничения на доступ к внешним файлам:</p>
+<ul>
+<li>Десктоп позволяет получить доступ почти к любому файлу</li>
+<li>Мобилки имеют ограниченный доступ к файловой системе</li>
+<li>Веб не имеет файловой системы</li>
+</ul>
+<p>Мы решили сделать единый способ доступа к ресурсам путём их встраивания в исполняемый файл. Это решение привело к рождению проектов <strong>mjin-resource</strong> и <strong>mahjong-data</strong>.</p>
+<p>Проект <a href="https://bitbucket.org/ogstudio/mjin-resource">mjin-resource</a> служит для:</p>
+<ul>
+<li>перевода бинарных файлов в заголовочные файлы C с помощью утилиты <strong>xxd</strong></li>
+<li>создания проекта MJIN, состоящего из сгенерированных заголовочных файлов, который собирается в статическую библиотеку</li>
+<li>предоставления интерфейса C++ для работы с ресурсами</li>
+</ul>
+<p>Проект <a href="https://bitbucket.org/ogstudio-games/mahjong-data">mahjong-data</a> является примером подобного проекта MJIN, ресурсы из которого использует проект <a href="https://bitbucket.org/ogstudio-games/mahjong">mahjong</a>.</p>
+<p><strong>Проблема №2: загрузка изображений PNG на поддерживаемых платформах</strong></p>
+<p>Для загрузки PNG мы используем соответствующий плагин OpenSceneGraph. Мы собрали его без проблем для десктопа. Сборка же для веба (Emscripten) оказалась сложнее: Emscripten содержит собственную версию <strong>libpng</strong>, которую сборочный скрипт OpenSceneGraph не видит. Нам пришлось обойти несколько проверок OpenSceneGraph, чтобы успешно собрать плагин для Emscripten. Сборка плагина под мобилки ещё ждёт нас впереди. Как только мы разберёмся с плагином PNG на всех поддерживаемых платформах, мы опубликуем информацию о его сборке в новом самоучителе для <a href="https://github.com/ogstudio/openscenegraph-cross-platform-guide">кросс-платформенного руководства OpenSceneGraph</a>. Нас уже <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues/4">попросили это сделать</a>.</p>
+<p><strong>Разработка</strong></p>
+<p><a href="2017-03-16_lets-go-ru.html">Как вы знаете</a>, мы опубликовали кросс-платформенное руководство OpenSceneGraph для усиления сообщества OpenSceneGraph. Мы ценим обучение и любим делиться своими знаниями. Поэтому мы решили разрабатывать Маджонг небольшими воспроизводимыми частями, каждая из которых имеет уникальную внутреннюю версию. Эти версии доступны в <a href="https://bitbucket.org/ogstudio-games/mahjong">хранилище проекта mahjong</a>.</p>
+<p>Мы также предоставляем <a href="http://ogstudio.github.io/game-mahjong">историю версий, каждая из которых сопровождается сборкой под веб</a>, для следующих целей:</p>
+<ul>
+<li>обучение: показать ход разработки изнутри</li>
+<li>доступность: предоставить старые версии для сравнения</li>
+</ul>
+<p><strong>Текущее состояние игры Маджонг</strong></p>
+<p>На момент написания этой статьи мы закончили реализацию выбора фишек. <a href="https://ogstudio.github.io/game-mahjong/versions/010/mjin-player.html">Проверьте в своём браузере!</a></p>
+<p>После реализации сравнения фишек мы опубликуем промежуточный результат для всех поддерживаемых платформ.</p>
+<p>На этом мы заканчиваем описание начала воссоздания игры Маджонг.</p>
+
+            </div>
+        </div>
+        </center>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>
